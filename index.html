@@ -1,51 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>BHB Concept Beauty - Quiz Capilar</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Descubra seu estilo de cuidado</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Descubra o melhor cuidado para seu cabelo!</h1>
-  <p>Responda às perguntas abaixo e descubra!</p>
+    <h1>Descubra o cuidado ideal para seu cabelo</h1>
+    <form id="formulario">
+        <p>Responda às perguntas abaixo e descubra!</p>
 
-  <form id="quizForm">
-    <label for="pergunta1">Como você descreveria seu tipo de cabelo?</label>
-    <select id="pergunta1" name="pergunta1">
-      <option value="">Selecione...</option>
-      <option value="leve">Liso e com pouco volume</option>
-      <option value="nutricao">Ondulado ou com frizz</option>
-      <option value="corte">Cacheado ou volumoso</option>
-    </select><br><br>
+        <label for="tipoCabelo">Como você descreveria seu tipo de cabelo?</label>
+        <select id="tipoCabelo">
+            <option value="">Selecione</option>
+            <option value="Liso">Liso</option>
+            <option value="Ondulado">Ondulado</option>
+            <option value="Cacheado ou volumoso">Cacheado ou volumoso</option>
+        </select>
 
-    <label for="pergunta2">Seu cabelo está ressecado?</label>
-    <select id="pergunta2" name="pergunta2">
-      <option value="">Selecione...</option>
-      <option value="leve">Pouco</option>
-      <option value="nutricao">Muito</option>
-    </select><br><br>
+        <label for="ressecado">Seu cabelo está ressecado?</label>
+        <select id="ressecado">
+            <option value="">Selecione</option>
+            <option value="Muito">Muito</option>
+            <option value="Pouco">Pouco</option>
+            <option value="Nada">Nada</option>
+        </select>
 
-    <label for="pergunta3">Com que frequência você usa química?</label>
-    <select id="pergunta3" name="pergunta3">
-      <option value="">Selecione...</option>
-      <option value="leve">Raramente</option>
-      <option value="nutricao">Às vezes</option>
-      <option value="tratamento">Com frequência</option>
-    </select><br><br>
+        <label for="quimica">Com que frequência você usa química?</label>
+        <select id="quimica">
+            <option value="">Selecione</option>
+            <option value="Sempre">Sempre</option>
+            <option value="Às vezes">Às vezes</option>
+            <option value="Nunca">Nunca</option>
+        </select>
 
-    <label for="pergunta4">Você percebe queda ou quebra?</label>
-    <select id="pergunta4" name="pergunta4">
-      <option value="">Selecione...</option>
-      <option value="leve">Não</option>
-      <option value="tratamento">Queda leve</option>
-      <option value="tratamento">Queda intensa</option>
-    </select><br><br>
+        <label for="quebra">Você percebe queda ou quebra?</label>
+        <select id="quebra">
+            <option value="">Selecione</option>
+            <option value="Muita quebra">Muita quebra</option>
+            <option value="Queda leve">Queda leve</option>
+            <option value="Nada">Nada</option>
+        </select>
 
-    <input type="submit" value="Ver Resultado">
-  </form>
+        <button type="submit">Ver Resultado</button>
+    </form>
 
-  <div id="resultado"></div>
+    <p id="aviso"></p>
+    <div id="resultado"></div>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
