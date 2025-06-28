@@ -1,43 +1,87 @@
 body {
-    background-color: #f9dce3;
-    font-family: 'Segoe UI', cursive;
-    color: #5c3c47;
-    text-align: center;
-    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fde4ec;
+    color: #5a2a41;
+    margin: 0;
+    padding: 0;
 }
-h1 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-form {
-    max-width: 400px;
+
+.container {
+    max-width: 700px;
     margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
 }
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #a2446d;
+    font-family: 'Brush Script MT', cursive;
+}
+
+p.description {
+    font-size: 1rem;
+    color: #7a3b57;
+    margin-bottom: 2rem;
+}
+
+form {
+    text-align: left;
+}
+
 label {
     display: block;
-    margin-top: 15px;
-    font-style: italic;
+    margin-top: 20px;
+    font-weight: 500;
+    color: #842848; /* Cor mais escura para melhor leitura */
+    font-family: 'Georgia', serif;
 }
-select, button {
+
+select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-top: 5px;
-    border-radius: 5px;
+    border-radius: 6px;
     border: 1px solid #ccc;
+    font-size: 1rem;
 }
+
 button {
-    background-color: #e5b7c0;
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #d98ca7;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
     border: none;
-    color: #333;
-    font-weight: bold;
-    margin-top: 20px;
+    border-radius: 6px;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
+button:hover {
+    background-color: #c07290;
+}
+
 #resultado {
-    margin-top: 20px;
+    margin-top: 30px;
+    font-size: 1.2rem;
     font-weight: bold;
+    color: #5a2a41;
 }
-#aviso {
-    color: red;
-    margin-top: 10px;
+
+#mensagemErro {
+    margin-top: 20px;
+    color: #a1002d;
     font-style: italic;
+    font-weight: 500;
+    border: 2px solid #a1002d;
+    padding: 5px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 6px;
 }
