@@ -1,18 +1,18 @@
-document.getElementById("formulario").addEventListener("submit", function(event) {
+document.getElementById("quizForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    const tipoCabelo = document.getElementById("tipoCabelo").value;
+    const tipoCabelo = document.getElementById("tipo").value;
     const ressecado = document.getElementById("ressecado").value;
     const quimica = document.getElementById("quimica").value;
-    const quebra = document.getElementById("quebra").value;
+    const quebra = document.getElementById("queda").value;
     const resultadoDiv = document.getElementById("resultado");
-    const aviso = document.getElementById("aviso");
+    const aviso = document.getElementById("mensagemErro");
 
     aviso.textContent = "";
+    resultadoDiv.textContent = "";
 
     if (!tipoCabelo || !ressecado || !quimica || !quebra) {
         aviso.textContent = "Por favor, responda todas as perguntas.";
-        resultadoDiv.textContent = "";
         return;
     }
 
@@ -20,23 +20,23 @@ document.getElementById("formulario").addEventListener("submit", function(event)
     let nutricao = 0;
     let corteEspecial = 0;
 
-    if (ressecado === "Muito") tratamento++;
-    if (ressecado === "Pouco") nutricao++;
+    if (ressecado === "muito") tratamento++;
+    if (ressecado === "pouco") nutricao++;
 
-    if (quimica === "Sempre") tratamento++;
-    if (quimica === "Às vezes") nutricao++;
+    if (quimica === "frequente") tratamento++;
+    if (quimica === "asvezes") nutricao++;
 
-    if (quebra === "Muita quebra") tratamento++;
-    if (quebra === "Queda leve") nutricao++;
+    if (quebra === "muita") tratamento++;
+    if (quebra === "leve") nutricao++;
 
-    if (tipoCabelo === "Cacheado ou volumoso") corteEspecial++;
+    if (tipoCabelo === "cacheado") corteEspecial++;
 
     let resultado = "";
 
     if (tratamento >= 2) {
         resultado = "Seu cabelo demonstra sinais de danos. Recomendamos um cronograma capilar com foco em reconstrução e hidratações profundas.";
     } else if (nutricao >= 2) {
-        resultado = "Seu cabelo está saudável mas com leve ressecamento. Aposte em nutrições semanais com óleos vegetais e corte bordado.";
+        resultado = "Seu cabelo está saudável, mas com leve ressecamento. Aposte em nutrições semanais com óleos vegetais e corte bordado.";
     } else {
         resultado = "Seu cabelo está em boa condição geral. Um corte de manutenção e hidratação leve são ideais neste momento.";
     }
