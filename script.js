@@ -1,39 +1,49 @@
-document.getElementById("quizForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+document.getElementById("formulario").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-  const respostas = [
-    document.getElementById("pergunta1").value,
-    document.getElementById("pergunta2").value,
-    document.getElementById("pergunta3").value,
-    document.getElementById("pergunta4").value
-  ];
+    const tipoCabelo = document.getElementById("tipoCabelo").value;
+    const ressecado = document.getElementById("ressecado").value;
+    const quimica = document.getElementById("quimica").value;
+    const quebra = document.getElementById("quebra").value;
+    const resultadoDiv = document.getElementById("resultado");
+    const aviso = document.getElementById("aviso");
 
-  const contagem = {
-    corte: 0,
-    leve: 0,
-    hidratacao: 0,
-    nutricao: 0,
-    reconstrucao: 0,
-    cronograma: 0
-  };
+    aviso.textContent = "";
 
-  respostas.forEach(resp => {
-    contagem[resp] = (contagem[resp] || 0) + 1;
-  });
+    if (!tipoCabelo || !ressecado || !quimica || !quebra) {
+        aviso.textContent = "Por favor, responda todas as perguntas.";
+        resultadoDiv.textContent = "";
+        return;
+    }
 
-  // Achar qual categoria teve mais votos
-  const resultadoFinal = Object.keys(contagem).reduce((a, b) =>
-    contagem[a] > contagem[b] ? a : b
-  );
+    let tratamento = 0;
+    let nutricao = 0;
+    let corteEspecial = 0;
 
-  const mensagens = {
-    corte: "Você combina com um corte moderno e estiloso!",
-    leve: "Seu cabelo está saudável, mantenha uma rotina leve de cuidados.",
-    hidratacao: "Seu cabelo precisa de uma hidratação profunda!",
-    nutricao: "Seu cabelo se beneficiaria de uma nutrição intensiva!",
-    reconstrucao: "Seu cabelo está frágil: aposte em uma reconstrução capilar.",
-    cronograma: "Seu cabelo precisa de um cronograma capilar completo!"
-  };
+    if (ressecado === "Muito") tratamento++;
+    if (ressecado === "Pouco") nutricao++;
 
-  document.getElementById("resultado").innerText = mensagens[resultadoFinal];
+    if (quimica === "Sempre") tratamento++;
+    if (quimica === "Às vezes") nutricao++;
+
+    if (quebra === "Muita quebra") tratamento++;
+    if (quebra === "Queda leve") nutricao++;
+
+    if (tipoCabelo === "Cacheado ou volumoso") corteEspecial++;
+
+    let resultado = "";
+
+    if (tratamento >= 2) {
+        resultado = "Seu cabelo demonstra sinais de danos. Recomendamos um cronograma capilar com foco em reconstrução e hidratações profundas.";
+    } else if (nutricao >= 2) {
+        resultado = "Seu cabelo está saudável mas com leve ressecamento. Aposte em nutrições semanais com óleos vegetais e corte bordado.";
+    } else {
+        resultado = "Seu cabelo está em boa condição geral. Um corte de manutenção e hidratação leve são ideais neste momento.";
+    }
+
+    if (corteEspecial) {
+        resultado += " Como seu cabelo é cacheado ou volumoso, recomendamos cortes em camadas ou técnicas como o corte em U para valorizar os cachos.";
+    }
+
+    resultadoDiv.textContent = resultado;
 });
