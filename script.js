@@ -36,7 +36,7 @@ document.getElementById("quizForm").addEventListener("submit", function(event) {
     if (tratamento >= 2) {
         resultado = "Seu cabelo demonstra sinais de danos. Recomendamos um cronograma capilar com foco em reconstrução e hidratações profundas.";
     } else if (nutricao >= 2) {
-        resultado = "Seu cabelo está saudável, mas com leve ressecamento. Aposte em nutrições semanais com óleos vegetais e corte bordado.";
+        resultado = "Seu cabelo está saudável mas com leve ressecamento. Aposte em nutrições semanais com óleos vegetais e corte bordado.";
     } else {
         resultado = "Seu cabelo está em boa condição geral. Um corte de manutenção e hidratação leve são ideais neste momento.";
     }
