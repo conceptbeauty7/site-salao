@@ -18,12 +18,14 @@ h1 {
     margin-bottom: 0.5rem;
     color: #a2446d;
     font-family: 'Brush Script MT', cursive;
+    text-align: center;
 }
 
 p.description {
     font-size: 1rem;
     color: #7a3b57;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 form {
@@ -33,9 +35,10 @@ form {
 label {
     display: block;
     margin-top: 20px;
-    font-weight: 500;
-    color: #842848; /* Cor mais escura para melhor leitura */
+    font-weight: bold;
+    color: #4b1d33; /* Cor mais escura para melhor contraste */
     font-family: 'Georgia', serif;
+    font-size: 1.05rem;
 }
 
 select {
@@ -49,11 +52,11 @@ select {
 
 button {
     display: block;
-    width: 100%;
-    padding: 12px;
+    width: 100%; /* Agora ocupa toda a largura */
+    padding: 14px;
     background-color: #d98ca7;
     color: white;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: bold;
     border: none;
     border-radius: 6px;
