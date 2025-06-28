@@ -1,47 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Descubra o melhor cuidado para seu cabelo!</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>BHB Concept Beauty - Quiz Capilar</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Qual o cuidado ideal para seu cabelo?</h1>
-    <p>Responda às perguntas abaixo e descubra!</p>
-  </header>
+  <h1>Descubra o melhor cuidado para seu cabelo!</h1>
+  <p>Responda às perguntas abaixo e descubra!</p>
 
   <form id="quizForm">
-    <label for="pergunta1">Como você descreveria seu tipo de cabelo?</label><br>
+    <label for="pergunta1">Como você descreveria seu tipo de cabelo?</label>
     <select id="pergunta1" name="pergunta1">
+      <option value="">Selecione...</option>
       <option value="leve">Liso e com pouco volume</option>
       <option value="nutricao">Ondulado ou com frizz</option>
       <option value="corte">Cacheado ou volumoso</option>
     </select><br><br>
 
-    <label for="pergunta2">Seu cabelo está ressecado?</label><br>
+    <label for="pergunta2">Seu cabelo está ressecado?</label>
     <select id="pergunta2" name="pergunta2">
-      <option value="nao">Não</option>
-      <option value="leve">Um pouco</option>
-      <option value="hidratacao">Muito</option>
+      <option value="">Selecione...</option>
+      <option value="leve">Pouco</option>
+      <option value="nutricao">Muito</option>
     </select><br><br>
 
-    <label for="pergunta3">Com que frequência você usa química?</label><br>
+    <label for="pergunta3">Com que frequência você usa química?</label>
     <select id="pergunta3" name="pergunta3">
-      <option value="nao">Nunca</option>
+      <option value="">Selecione...</option>
+      <option value="leve">Raramente</option>
       <option value="nutricao">Às vezes</option>
-      <option value="cronograma">Com frequência</option>
+      <option value="tratamento">Com frequência</option>
     </select><br><br>
 
-    <label for="pergunta4">Você percebe queda ou quebra?</label><br>
+    <label for="pergunta4">Você percebe queda ou quebra?</label>
     <select id="pergunta4" name="pergunta4">
-      <option value="nao">Não</option>
-      <option value="leve">Queda leve</option>
-      <option value="reconstrucao">Muita quebra</option>
+      <option value="">Selecione...</option>
+      <option value="leve">Não</option>
+      <option value="tratamento">Queda leve</option>
+      <option value="tratamento">Queda intensa</option>
     </select><br><br>
 
-    <input type="submit" value="Ver Resultado" />
+    <input type="submit" value="Ver Resultado">
   </form>
 
   <div id="resultado"></div>
