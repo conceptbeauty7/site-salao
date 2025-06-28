@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descubra seu estilo de corte!</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Descubra o melhor cuidado para seu cabelo!</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Qual o melhor corte para você?</h1>
-        <p>Responda as perguntas abaixo e descubra seu estilo ideal!</p>
-    </header>
+  <header>
+    <h1>Qual o cuidado ideal para seu cabelo?</h1>
+    <p>Responda às perguntas abaixo e descubra!</p>
+  </header>
 
-    <form id="quizForm">
-        <label for="pergunta1">Qual seu tipo de cabelo?</label><br>
-        <select id="pergunta1" name="pergunta1">
-            <option value="A">Liso</option>
-            <option value="B">Cacheado</option>
-            <option value="C">Ondulado</option>
-        </select><br><br>
+  <form id="quizForm">
+    <label for="pergunta1">Como você descreveria seu tipo de cabelo?</label><br>
+    <select id="pergunta1" name="pergunta1">
+      <option value="leve">Liso e com pouco volume</option>
+      <option value="nutricao">Ondulado ou com frizz</option>
+      <option value="corte">Cacheado ou volumoso</option>
+    </select><br><br>
 
-        <label for="pergunta2">Qual seu estilo preferido?</label><br>
-        <select id="pergunta2" name="pergunta2">
-            <option value="A">Moderno</option>
-            <option value="B">Clássico</option>
-            <option value="C">Despojado</option>
-        </select><br><br>
+    <label for="pergunta2">Seu cabelo está ressecado?</label><br>
+    <select id="pergunta2" name="pergunta2">
+      <option value="nao">Não</option>
+      <option value="leve">Um pouco</option>
+      <option value="hidratacao">Muito</option>
+    </select><br><br>
 
-        <input type="submit" value="Ver Resultado">
-    </form>
+    <label for="pergunta3">Com que frequência você usa química?</label><br>
+    <select id="pergunta3" name="pergunta3">
+      <option value="nao">Nunca</option>
+      <option value="nutricao">Às vezes</option>
+      <option value="cronograma">Com frequência</option>
+    </select><br><br>
 
-    <div id="resultado"></div>
+    <label for="pergunta4">Você percebe queda ou quebra?</label><br>
+    <select id="pergunta4" name="pergunta4">
+      <option value="nao">Não</option>
+      <option value="leve">Queda leve</option>
+      <option value="reconstrucao">Muita quebra</option>
+    </select><br><br>
 
-    <script src="script.js"></script>
+    <input type="submit" value="Ver Resultado" />
+  </form>
+
+  <div id="resultado"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
