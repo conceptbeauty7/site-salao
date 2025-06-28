@@ -1,32 +1,39 @@
-document.getElementById('quizForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.getElementById("quizForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    const resposta1 = document.getElementById('pergunta1').value;
-    const resposta2 = document.getElementById('pergunta2').value;
+  const respostas = [
+    document.getElementById("pergunta1").value,
+    document.getElementById("pergunta2").value,
+    document.getElementById("pergunta3").value,
+    document.getElementById("pergunta4").value
+  ];
 
-    let resultado = "";
+  const contagem = {
+    corte: 0,
+    leve: 0,
+    hidratacao: 0,
+    nutricao: 0,
+    reconstrucao: 0,
+    cronograma: 0
+  };
 
-    if (resposta1 === "A" && resposta2 === "A") {
-        resultado = "Corte moderno para cabelo liso!";
-    } else if (resposta1 === "A" && resposta2 === "B") {
-        resultado = "Corte clássico para cabelo liso!";
-    } else if (resposta1 === "A" && resposta2 === "C") {
-        resultado = "Corte despojado para cabelo liso!";
-    } else if (resposta1 === "B" && resposta2 === "A") {
-        resultado = "Corte moderno para cabelo cacheado!";
-    } else if (resposta1 === "B" && resposta2 === "B") {
-        resultado = "Corte clássico para cabelo cacheado!";
-    } else if (resposta1 === "B" && resposta2 === "C") {
-        resultado = "Corte despojado para cabelo cacheado!";
-    } else if (resposta1 === "C" && resposta2 === "A") {
-        resultado = "Corte moderno para cabelo ondulado!";
-    } else if (resposta1 === "C" && resposta2 === "B") {
-        resultado = "Corte clássico para cabelo ondulado!";
-    } else if (resposta1 === "C" && resposta2 === "C") {
-        resultado = "Corte despojado para cabelo ondulado!";
-    } else {
-        resultado = "Por favor, responda todas as perguntas.";
-    }
+  respostas.forEach(resp => {
+    contagem[resp] = (contagem[resp] || 0) + 1;
+  });
 
-    document.getElementById('resultado').innerText = resultado;
+  // Achar qual categoria teve mais votos
+  const resultadoFinal = Object.keys(contagem).reduce((a, b) =>
+    contagem[a] > contagem[b] ? a : b
+  );
+
+  const mensagens = {
+    corte: "Você combina com um corte moderno e estiloso!",
+    leve: "Seu cabelo está saudável, mantenha uma rotina leve de cuidados.",
+    hidratacao: "Seu cabelo precisa de uma hidratação profunda!",
+    nutricao: "Seu cabelo se beneficiaria de uma nutrição intensiva!",
+    reconstrucao: "Seu cabelo está frágil: aposte em uma reconstrução capilar.",
+    cronograma: "Seu cabelo precisa de um cronograma capilar completo!"
+  };
+
+  document.getElementById("resultado").innerText = mensagens[resultadoFinal];
 });
