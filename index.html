@@ -1,53 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Descubra seu estilo de cuidado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra o Cuidado Ideal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Descubra o cuidado ideal para seu cabelo</h1>
-    <form id="formulario">
-        <p>Responda às perguntas abaixo e descubra!</p>
+    <div class="container">
+        <h1>Descubra o cuidado ideal para seu cabelo</h1>
+        <p class="description">Responda às perguntas abaixo e descubra!</p>
+        <form id="quizForm">
+            <label for="tipo">Como você descreveria seu tipo de cabelo?</label>
+            <select id="tipo" name="tipo">
+                <option value="">Selecione</option>
+                <option value="liso">Liso</option>
+                <option value="ondulado">Ondulado</option>
+                <option value="cacheado">Cacheado ou volumoso</option>
+                <option value="crespo">Crespo</option>
+            </select>
 
-        <label for="tipoCabelo">Como você descreveria seu tipo de cabelo?</label>
-        <select id="tipoCabelo">
-            <option value="">Selecione</option>
-            <option value="Liso">Liso</option>
-            <option value="Ondulado">Ondulado</option>
-            <option value="Cacheado ou volumoso">Cacheado ou volumoso</option>
-        </select>
+            <label for="ressecado">Seu cabelo está ressecado?</label>
+            <select id="ressecado" name="ressecado">
+                <option value="">Selecione</option>
+                <option value="nao">Não</option>
+                <option value="pouco">Pouco</option>
+                <option value="muito">Muito</option>
+            </select>
 
-        <label for="ressecado">Seu cabelo está ressecado?</label>
-        <select id="ressecado">
-            <option value="">Selecione</option>
-            <option value="Muito">Muito</option>
-            <option value="Pouco">Pouco</option>
-            <option value="Nada">Nada</option>
-        </select>
+            <label for="quimica">Com que frequência você usa química?</label>
+            <select id="quimica" name="quimica">
+                <option value="">Selecione</option>
+                <option value="nunca">Nunca</option>
+                <option value="asvezes">Às vezes</option>
+                <option value="frequente">Frequentemente</option>
+            </select>
 
-        <label for="quimica">Com que frequência você usa química?</label>
-        <select id="quimica">
-            <option value="">Selecione</option>
-            <option value="Sempre">Sempre</option>
-            <option value="Às vezes">Às vezes</option>
-            <option value="Nunca">Nunca</option>
-        </select>
+            <label for="queda">Você percebe queda ou quebra?</label>
+            <select id="queda" name="queda">
+                <option value="">Selecione</option>
+                <option value="nao">Não</option>
+                <option value="leve">Queda leve</option>
+                <option value="muita">Muita quebra</option>
+            </select>
 
-        <label for="quebra">Você percebe queda ou quebra?</label>
-        <select id="quebra">
-            <option value="">Selecione</option>
-            <option value="Muita quebra">Muita quebra</option>
-            <option value="Queda leve">Queda leve</option>
-            <option value="Nada">Nada</option>
-        </select>
-
-        <button type="submit">Ver Resultado</button>
-    </form>
-
-    <p id="aviso"></p>
-    <div id="resultado"></div>
-
+            <button type="submit">Ver Resultado</button>
+        </form>
+        <div id="resultado"></div>
+        <div id="mensagemErro"></div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
