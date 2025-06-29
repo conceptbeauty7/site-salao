@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Ficha de Anamnese Capilar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fde4ec;
+            color: #4b1d33;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff0f6;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        h1 {
+            text-align: center;
+            color: #a2446d;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+        }
+        .question-group {
+            margin-bottom: 20px;
+        }
+        .radio-group {
+            margin: 5px 0 15px 0;
+        }
+        .radio-group label {
+            font-weight: normal;
+        }
+        button {
+            background-color: #d98ca7;
+            color: white;
+            padding: 14px;
+            width: 100%;
+            font-size: 1.05rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #c07290;
+        }
+        #whatsapp-link {
+            text-align: center;
+            margin-top: 25px;
+        }
+        #whatsapp-link a {
+            text-decoration: none;
+            color: white;
+            background-color: #25d366;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ficha de Anamnese Capilar</h1>
+        <form action="mailto:santocamilly3@gmail.com" method="POST" enctype="text/plain">
+            <div class="question-group">
+                <label for="nome">Nome completo:</label>
+                <input type="text" name="Nome" id="nome" required>
+            </div>
+            <div class="question-group">
+                <label for="telefone">Telefone/WhatsApp:</label>
+                <input type="tel" name="Telefone" id="telefone">
+            </div>
+            <div class="question-group">
+                <label for="email">Email:</label>
+                <input type="email" name="Email" id="email">
+            </div>
+
+            <div class="question-group">
+                <label>1. O que te motivou a buscar ajuda capilar?</label>
+                <textarea name="Motivação" rows="2"></textarea>
+            </div>
+            <div class="question-group">
+                <label>2. Há quanto tempo você percebe a queda ou afinamento?</label>
+                <textarea name="TempoQueda"></textarea>
+            </div>
+            <div class="question-group">
+                <label>3. O problema está:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="Situacao" value="Aumentando"> Aumentando</label><br>
+                    <label><input type="radio" name="Situacao" value="Estável"> Estável</label><br>
+                    <label><input type="radio" name="Situacao" value="Diminuindo"> Diminuindo</label>
+                </div>
+            </div>
+            <div class="question-group">
+                <label>4. Você já fez algum tratamento capilar?</label>
+                <textarea name="TratamentoAnterior"></textarea>
+            </div>
+            <div class="question-group">
+                <label>5. Há histórico familiar de queda capilar?</label>
+                <textarea name="HistoricoFamiliar"></textarea>
+            </div>
+            <div class="question-group">
+                <label>6. Seu cabelo está:</label>
+                <div class="radio-group">
+                    <label><input type="checkbox" name="CondicaoCabelo" value="Oleoso"> Oleoso</label><br>
+                    <label><input type="checkbox" name="CondicaoCabelo" value="Ressecado"> Ressecado</label><br>
+                    <label><input type="checkbox" name="CondicaoCabelo" value="Quebradiço"> Quebradiço</label><br>
+                    <label><input type="checkbox" name="CondicaoCabelo" value="Mais seco"> Mais seco</label><br>
+                    <label><input type="checkbox" name="CondicaoCabelo" value="Não cresce"> Não cresce</label>
+                </div>
+            </div>
+            <div class="question-group">
+                <label>7. Produtos que costuma usar?</label>
+                <textarea name="ProdutosUsados"></textarea>
+            </div>
+            <div class="question-group">
+                <label>8. Doenças nos últimos 6 meses:</label>
+                <textarea name="Doencas"></textarea>
+            </div>
+            <div class="question-group">
+                <label>9. Eventos antes da queda:</label>
+                <textarea name="EventosAntes"></textarea>
+            </div>
+            <div class="question-group">
+                <label>10. Alergia a medicamentos/cosméticos?</label>
+                <textarea name="Alergias"></textarea>
+            </div>
+            <div class="question-group">
+                <label>Autorização:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="Autorizacao" value="Sim"> Autorizo e estou de acordo com os procedimentos realizados e/ou a serem realizados pela profissional Bianca Marques de Abreu.</label><br>
+                    <label><input type="radio" name="Autorizacao" value="Não"> Não autorizo</label>
+                </div>
+            </div>
+
+            <button type="submit">Enviar formulário</button>
+
+            <div id="whatsapp-link">
+                <p>Após enviar, você pode agendar seu atendimento ou tirar dúvidas clicando abaixo:</p>
+                <a href="http://wa.me/message/NJSWFOS4GCHXA1" target="_blank">Falar com o Salão no WhatsApp</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
