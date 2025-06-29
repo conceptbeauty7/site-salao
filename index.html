@@ -4,27 +4,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ficha de Anamnese - BHB Concept Beauty</title>
+  <title>BHB Concept Beauty</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
       background-color: #fde4ec;
       color: #4b1d33;
+    }
+    header {
+      background-color: #fff0f5;
       padding: 20px;
-      max-width: 900px;
+      text-align: center;
+    }
+    header img {
+      max-width: 150px;
+      border-radius: 50%;
+    }
+    nav {
+      background-color: #ffd6e6;
+      text-align: center;
+      padding: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #a2446d;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 800px;
       margin: auto;
+      padding: 20px;
     }
     h1 {
       text-align: center;
-      color: #a2446d;
       font-family: 'Brush Script MT', cursive;
+      color: #a2446d;
     }
     label {
       display: block;
       margin-top: 20px;
       font-weight: bold;
     }
-    input, select, textarea {
+    select, input, textarea, button {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
@@ -39,25 +65,25 @@
       background-color: #d98ca7;
       color: white;
       font-weight: bold;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 6px;
       margin-top: 20px;
       cursor: pointer;
     }
     button:hover {
       background-color: #c07290;
     }
-    .whatsapp {
-      display: none;
+    .hidden { display: none; }
+    #resultado {
       margin-top: 30px;
-      text-align: center;
+      font-weight: bold;
+      color: #842848;
     }
-    .whatsapp a {
+    .btn-link {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
       background-color: #25D366;
       color: white;
-      padding: 12px 24px;
-      border-radius: 6px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
     }
@@ -65,120 +91,223 @@
 </head>
 <body>
 
-<h1>Ficha de Anamnese Capilar</h1>
+<header>
+  <img src="https://via.placeholder.com/150x150.png?text=BHB+Logo" alt="Logo BHB">
+</header>
 
-<form action="https://formsubmit.co/santocamilly3@gmail.com" method="POST" onsubmit="mostrarWhatsapp(); return true;">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="#">
+<nav>
+  <a href="#" onclick="mostrarSecao('quiz')">Diagnóstico Capilar</a>
+  <a href="#" onclick="mostrarSecao('ficha')">Ficha de Anamnese</a>
+</nav>
 
-  <label>Nome completo:</label>
-  <input type="text" name="nome" required>
+<div class="container">
+  <section id="quiz">
+    <h1>Descubra o cuidado ideal para seu cabelo</h1>
+    <form id="quizForm">
+      <label for="tipo">Como você descreveria seu tipo de cabelo?</label>
+      <select id="tipo" name="tipo">
+        <option value="">Selecione</option>
+        <option value="liso">Liso</option>
+        <option value="ondulado">Ondulado</option>
+        <option value="cacheado">Cacheado ou volumoso</option>
+        <option value="crespo">Crespo</option>
+      </select>
 
-  <label>Data de nascimento:</label>
-  <input type="date" name="data_nascimento" required>
+      <label for="ressecado">Seu cabelo está ressecado?</label>
+      <select id="ressecado" name="ressecado">
+        <option value="">Selecione</option>
+        <option value="nao">Não</option>
+        <option value="pouco">Pouco</option>
+        <option value="muito">Muito</option>
+      </select>
 
-  <label>Início do protocolo capilar:</label>
-  <input type="date" name="inicio_protocolo">
+      <label for="quimica">Com que frequência você usa química?</label>
+      <select id="quimica" name="quimica">
+        <option value="">Selecione</option>
+        <option value="nunca">Nunca</option>
+        <option value="asvezes">Às vezes</option>
+        <option value="frequente">Frequentemente</option>
+      </select>
 
-  <label>Sexo:</label>
-  <select name="sexo" required>
-    <option value="">Selecione</option>
-    <option value="Feminino">Feminino</option>
-    <option value="Masculino">Masculino</option>
-  </select>
+      <label for="queda">Você percebe queda ou quebra?</label>
+      <select id="queda" name="queda">
+        <option value="">Selecione</option>
+        <option value="nao">Não</option>
+        <option value="leve">Queda leve</option>
+        <option value="muita">Muita quebra</option>
+      </select>
 
-  <label>1. Queixa principal sobre o couro cabeludo:</label>
-  <textarea name="queixa_couro"></textarea>
+      <button type="submit">Ver Resultado</button>
+    </form>
 
-  <label>2. Essa queixa afeta outras áreas do corpo?</label>
-  <select name="afeta_outras_areas">
-    <option value="Não">Não</option>
-    <option value="Sim">Sim</option>
-  </select>
+    <div id="resultado"></div>
+  </section>
 
-  <label>3. Tempo com esse problema:</label>
-  <input type="text" name="tempo_problema">
+  <section id="ficha" class="hidden">
+    <h1>Ficha de Anamnese Capilar</h1>
+    <form action="https://formsubmit.co/santocamilly3@gmail.com" method="POST" onsubmit="mostrarWhatsapp(); return true;">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="#">
+      <label>Nome completo:</label>
+      <input type="text" name="nome" required>
 
-  <label>4. Está associado a doença sazonal ou congênita?</label>
-  <input type="text" name="doenca_relacionada">
+      <label>Data de nascimento:</label>
+      <input type="date" name="data_nascimento" required>
 
-  <label>5. Evolução do problema:</label>
-  <select name="estado_problema">
-    <option value="Aumentando">Aumentando</option>
-    <option value="Estável">Estável</option>
-    <option value="Diminuindo">Diminuindo</option>
-  </select>
+      <label>Início do protocolo capilar:</label>
+      <input type="date" name="inicio_protocolo">
 
-  <label>6. Alterações no couro cabeludo:</label>
-  <textarea name="alteracoes_couro"></textarea>
+      <label>Sexo:</label>
+      <select name="sexo" required>
+        <option value="">Selecione</option>
+        <option value="Feminino">Feminino</option>
+        <option value="Masculino">Masculino</option>
+      </select>
 
-  <label>7. Mudanças no cabelo com o tempo:</label>
-  <textarea name="mudancas_cabelo"></textarea>
+      <label>1. Queixa principal sobre o couro cabeludo:</label>
+      <textarea name="queixa_couro"></textarea>
 
-  <label>8. Doenças nos últimos 6 meses:</label>
-  <textarea name="doencas_recentes"></textarea>
+      <label>2. Essa queixa afeta outras áreas do corpo?</label>
+      <select name="afeta_outras_areas">
+        <option value="Não">Não</option>
+        <option value="Sim">Sim</option>
+      </select>
 
-  <label>9. Eventos antes da queda:</label>
-  <textarea name="eventos_queda"></textarea>
+      <label>3. Tempo com esse problema:</label>
+      <input type="text" name="tempo_problema">
 
-  <label>10. Alergia a medicamentos/cosméticos?</label>
-  <input type="text" name="alergias">
+      <label>4. Está associado a doença sazonal ou congênita?</label>
+      <input type="text" name="doenca_relacionada">
 
-  <label>11. Tem filhos? Última gestação:</label>
-  <input type="text" name="gestacao_info">
+      <label>5. Evolução do problema:</label>
+      <select name="estado_problema">
+        <option value="Aumentando">Aumentando</option>
+        <option value="Estável">Estável</option>
+        <option value="Diminuindo">Diminuindo</option>
+      </select>
 
-  <label>12. Queda após gestação?</label>
-  <select name="queda_pos_gestacao">
-    <option value="Não">Não</option>
-    <option value="Sim">Sim</option>
-  </select>
+      <label>6. Alterações no couro cabeludo:</label>
+      <textarea name="alteracoes_couro"></textarea>
 
-  <label>13. Alteração hormonal?</label>
-  <input type="text" name="alteracao_hormonal">
+      <label>7. Mudanças no cabelo com o tempo:</label>
+      <textarea name="mudancas_cabelo"></textarea>
 
-  <label>14. Calvície na família? Quem?</label>
-  <input type="text" name="calvicie_familiar">
+      <label>8. Doenças nos últimos 6 meses:</label>
+      <textarea name="doencas_recentes"></textarea>
 
-  <label>15. Frequência de lavagem:</label>
-  <input type="text" name="frequencia_lavagem">
+      <label>9. Eventos antes da queda:</label>
+      <textarea name="eventos_queda"></textarea>
 
-  <label>16. Processo de cor nos cabelos?</label>
-  <input type="text" name="processo_cor">
+      <label>10. Alergia a medicamentos/cosméticos?</label>
+      <input type="text" name="alergias">
 
-  <label>17. Usa algum dos itens?</label>
-  <textarea name="itens_usados"></textarea>
+      <label>11. Tem filhos? Última gestação:</label>
+      <input type="text" name="gestacao_info">
 
-  <label>18. Nível de estresse:</label>
-  <select name="nivel_estresse">
-    <option value="Baixo">Baixo</option>
-    <option value="Médio">Médio</option>
-    <option value="Alto">Alto</option>
-  </select>
+      <label>12. Queda após gestação?</label>
+      <select name="queda_pos_gestacao">
+        <option value="Não">Não</option>
+        <option value="Sim">Sim</option>
+      </select>
 
-  <label>19. Usa alisantes/progressiva? Frequência:</label>
-  <input type="text" name="alisamento_frequencia">
+      <label>13. Alteração hormonal?</label>
+      <input type="text" name="alteracao_hormonal">
 
-  <label>20. Usa marcapasso?</label>
-  <select name="marcapasso">
-    <option value="Não">Não</option>
-    <option value="Sim">Sim</option>
-  </select>
+      <label>14. Calvície na família? Quem?</label>
+      <input type="text" name="calvicie_familiar">
 
-  <label>Autorização:</label>
-  <textarea name="autorizacao">Autorizo e estou de acordo com os procedimentos realizados e/ou à serem realizados pela profissional Bianca Marques de Abreu.</textarea>
+      <label>15. Frequência de lavagem:</label>
+      <input type="text" name="frequencia_lavagem">
 
-  <button type="submit">Enviar formulário</button>
-</form>
+      <label>16. Processo de cor nos cabelos?</label>
+      <input type="text" name="processo_cor">
 
-<div class="whatsapp" id="whatsapp">
-  <p>Formulário enviado com sucesso!</p>
-  <a href="http://wa.me/message/NJSWFOS4GCHXA1" target="_blank">Falar com o salão pelo WhatsApp</a>
+      <label>17. Usa algum dos itens?</label>
+      <textarea name="itens_usados"></textarea>
+
+      <label>18. Nível de estresse:</label>
+      <select name="nivel_estresse">
+        <option value="Baixo">Baixo</option>
+        <option value="Médio">Médio</option>
+        <option value="Alto">Alto</option>
+      </select>
+
+      <label>19. Usa alisantes/progressiva? Frequência:</label>
+      <input type="text" name="alisamento_frequencia">
+
+      <label>20. Usa marcapasso?</label>
+      <select name="marcapasso">
+        <option value="Não">Não</option>
+        <option value="Sim">Sim</option>
+      </select>
+
+      <label>Autorização:</label>
+      <textarea name="autorizacao">Autorizo e estou de acordo com os procedimentos realizados e/ou à serem realizados pela profissional Bianca Marques de Abreu.</textarea>
+
+      <button type="submit">Enviar formulário</button>
+    </form>
+
+    <div class="hidden" id="whatsapp">
+      <p style="text-align:center; margin-top: 20px;">Formulário enviado! Clique abaixo para falar conosco:</p>
+      <div style="text-align:center;">
+        <a class="btn-link" href="http://wa.me/message/NJSWFOS4GCHXA1" target="_blank">Falar com o salão no WhatsApp</a>
+      </div>
+    </div>
+  </section>
 </div>
 
 <script>
+  function mostrarSecao(id) {
+    document.getElementById('quiz').classList.add('hidden');
+    document.getElementById('ficha').classList.add('hidden');
+    document.getElementById(id).classList.remove('hidden');
+  }
+
+  document.getElementById("quizForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const tipo = document.getElementById("tipo").value;
+    const ressecado = document.getElementById("ressecado").value;
+    const quimica = document.getElementById("quimica").value;
+    const queda = document.getElementById("queda").value;
+    const resultadoDiv = document.getElementById("resultado");
+
+    resultadoDiv.innerHTML = "";
+
+    if (!tipo || !ressecado || !quimica || !queda) {
+      resultadoDiv.innerHTML = "Por favor, responda todas as perguntas.";
+      return;
+    }
+
+    let tratamento = 0, nutricao = 0, corteEspecial = 0;
+    if (ressecado === "muito") tratamento++;
+    if (ressecado === "pouco") nutricao++;
+    if (quimica === "frequente") tratamento++;
+    if (quimica === "asvezes") nutricao++;
+    if (queda === "muita") tratamento++;
+    if (queda === "leve") nutricao++;
+    if (tipo === "cacheado") corteEspecial++;
+
+    let resultado = "";
+
+    if (tratamento >= 2) {
+      resultado = "Seu cabelo demonstra sinais de danos. Recomendamos um cronograma capilar com foco em reconstrução e hidratações profundas.<br><br>";
+      resultado += 'Preencha a <strong><a href="#" onclick="mostrarSecao(\'ficha\')">Ficha de Anamnese</a></strong> para atendimento personalizado.<br>';
+    } else if (nutricao >= 2) {
+      resultado = "Seu cabelo está saudável mas com leve ressecamento. Aposte em nutrições semanais com óleos vegetais.";
+    } else {
+      resultado = "Seu cabelo está em boa condição geral. Um corte de manutenção e hidratação leve são ideais.";
+    }
+
+    if (corteEspecial) {
+      resultado += "<br><br>Como seu cabelo é cacheado ou volumoso, recomendamos cortes em camadas.";
+    }
+
+    resultadoDiv.innerHTML = resultado;
+  });
+
   function mostrarWhatsapp() {
     setTimeout(() => {
-      document.getElementById("whatsapp").style.display = "block";
+      document.getElementById("whatsapp").classList.remove("hidden");
     }, 1500);
   }
 </script>
