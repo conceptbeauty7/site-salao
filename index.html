@@ -4,71 +4,221 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BHB Concept Beauty</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background-color: #fde4ec;
+            color: #4b1d33;
+        }
+
+        header {
+            background-color: #fff0f5;
+            padding: 10px 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px #00000015;
+        }
+
+        header img {
+            max-height: 80px;
+            border-radius: 50%;
+        }
+
+        nav {
+            text-align: center;
+            background-color: #ffd6e6;
+            padding: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #a2446d;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            font-family: 'Brush Script MT', cursive;
+            color: #a2446d;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #d98ca7;
+            color: white;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c07290;
+        }
+
+        #resultado {
+            margin-top: 30px;
+            font-weight: bold;
+            color: #842848;
+        }
+
+        iframe {
+            border: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <header class="top-bar">
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-        <img src="https://raw.githubusercontent.com/conceptbeauty7/site-salao/main/logo-bhb.jpg" alt="Logo BHB Concept Beauty" class="logo">
-    </header>
 
-    <nav id="sideMenu" class="side-menu">
-        <a href="#quiz" onclick="mostrarSecao('quiz')">Descubra seu Estilo</a>
-        <a href="#ficha" onclick="mostrarSecao('ficha')">Ficha de Anamnese</a>
-    </nav>
+<header>
+    <img src="https://via.placeholder.com/150x150.png?text=BHB+Logo" alt="Logo do Salão">
+</header>
 
-    <main>
-        <section id="quiz" class="section">
-            <h1>Descubra o cuidado ideal para seu cabelo</h1>
-            <p class="description">Responda às perguntas abaixo e descubra!</p>
-            <form id="quizForm">
-                <label for="tipo">Como você descreveria seu tipo de cabelo?</label>
-                <select id="tipo" name="tipo">
-                    <option value="">Selecione</option>
-                    <option value="liso">Liso</option>
-                    <option value="ondulado">Ondulado</option>
-                    <option value="cacheado">Cacheado ou volumoso</option>
-                    <option value="crespo">Crespo</option>
-                </select>
+<nav>
+    <a href="#" onclick="mostrarSecao('quiz')">Descubra seu Estilo</a>
+    <a href="#" onclick="mostrarSecao('ficha')">Ficha de Anamnese</a>
+</nav>
 
-                <label for="ressecado">Seu cabelo está ressecado?</label>
-                <select id="ressecado" name="ressecado">
-                    <option value="">Selecione</option>
-                    <option value="nao">Não</option>
-                    <option value="pouco">Pouco</option>
-                    <option value="muito">Muito</option>
-                </select>
+<div class="container">
+    <!-- Seção do Quiz -->
+    <section id="quiz">
+        <h1>Descubra o cuidado ideal para seu cabelo</h1>
+        <p style="text-align:center;">Responda às perguntas abaixo e descubra!</p>
 
-                <label for="quimica">Com que frequência você usa química?</label>
-                <select id="quimica" name="quimica">
-                    <option value="">Selecione</option>
-                    <option value="nunca">Nunca</option>
-                    <option value="asvezes">Às vezes</option>
-                    <option value="frequente">Frequentemente</option>
-                </select>
+        <form id="quizForm">
+            <label for="tipo">Como você descreveria seu tipo de cabelo?</label>
+            <select id="tipo" name="tipo">
+                <option value="">Selecione</option>
+                <option value="liso">Liso</option>
+                <option value="ondulado">Ondulado</option>
+                <option value="cacheado">Cacheado ou volumoso</option>
+                <option value="crespo">Crespo</option>
+            </select>
 
-                <label for="queda">Você percebe queda ou quebra?</label>
-                <select id="queda" name="queda">
-                    <option value="">Selecione</option>
-                    <option value="nao">Não</option>
-                    <option value="leve">Queda leve</option>
-                    <option value="muita">Muita quebra</option>
-                </select>
+            <label for="ressecado">Seu cabelo está ressecado?</label>
+            <select id="ressecado" name="ressecado">
+                <option value="">Selecione</option>
+                <option value="nao">Não</option>
+                <option value="pouco">Pouco</option>
+                <option value="muito">Muito</option>
+            </select>
 
-                <button type="submit">Ver Resultado</button>
-            </form>
-            <div id="resultado"></div>
-            <div id="mensagemErro"></div>
-        </section>
+            <label for="quimica">Com que frequência você usa química?</label>
+            <select id="quimica" name="quimica">
+                <option value="">Selecione</option>
+                <option value="nunca">Nunca</option>
+                <option value="asvezes">Às vezes</option>
+                <option value="frequente">Frequentemente</option>
+            </select>
 
-        <section id="ficha" class="section" style="display: none;">
-            <h1>Ficha de Anamnese Capilar</h1>
-            <p class="description">Clique abaixo para preencher o formulário:</p>
-            <a class="formulario-link" href="https://forms.gle/" target="_blank">Abrir Formulário</a>
-            <p class="description">Caso tenha dúvidas, fale conosco pelo <a href="http://wa.me/message/NJSWFOS4GCHXA1" target="_blank">WhatsApp</a>.</p>
-        </section>
-    </main>
+            <label for="queda">Você percebe queda ou quebra?</label>
+            <select id="queda" name="queda">
+                <option value="">Selecione</option>
+                <option value="nao">Não</option>
+                <option value="leve">Queda leve</option>
+                <option value="muita">Muita quebra</option>
+            </select>
 
-    <script src="script.js"></script>
+            <button type="submit">Ver Resultado</button>
+        </form>
+
+        <div id="resultado"></div>
+    </section>
+
+    <!-- Seção do Formulário -->
+    <section id="ficha" class="hidden">
+        <h2>Ficha de Anamnese Capilar</h2>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc21pAEhEw3C-iNPjbGINDvsoMjVF40G59HoBbt9bqd2nTnwQ/viewform?embedded=true" width="100%" height="1500">Carregando…</iframe>
+    </section>
+</div>
+
+<script>
+    function mostrarSecao(id) {
+        document.getElementById('quiz').classList.add('hidden');
+        document.getElementById('ficha').classList.add('hidden');
+        document.getElementById(id).classList.remove('hidden');
+    }
+
+    document.getElementById("quizForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const tipoCabelo = document.getElementById("tipo").value;
+        const ressecado = document.getElementById("ressecado").value;
+        const quimica = document.getElementById("quimica").value;
+        const quebra = document.getElementById("queda").value;
+        const resultadoDiv = document.getElementById("resultado");
+
+        resultadoDiv.innerHTML = "";
+
+        if (!tipoCabelo || !ressecado || !quimica || !quebra) {
+            resultadoDiv.innerHTML = "Por favor, responda todas as perguntas.";
+            return;
+        }
+
+        let tratamento = 0;
+        let nutricao = 0;
+        let corteEspecial = 0;
+
+        if (ressecado === "muito") tratamento++;
+        if (ressecado === "pouco") nutricao++;
+
+        if (quimica === "frequente") tratamento++;
+        if (quimica === "asvezes") nutricao++;
+
+        if (quebra === "muita") tratamento++;
+        if (quebra === "leve") nutricao++;
+
+        if (tipoCabelo === "cacheado") corteEspecial++;
+
+        let resultado = "";
+
+        if (tratamento >= 2) {
+            resultado = "Seu cabelo demonstra sinais de danos. Recomendamos um cronograma capilar com foco em reconstrução e hidratações profundas.<br><br>";
+            resultado += 'Você pode preencher a <strong><a href="#" onclick="mostrarSecao(\'ficha\')">Ficha de Anamnese</a></strong> para um atendimento personalizado.<br>';
+        } else if (nutricao >= 2) {
+            resultado = "Seu cabelo está saudável mas com leve ressecamento. Aposte em nutrições semanais com óleos vegetais e corte bordado.";
+        } else {
+            resultado = "Seu cabelo está em boa condição geral. Um corte de manutenção e hidratação leve são ideais neste momento.";
+        }
+
+        if (corteEspecial) {
+            resultado += "<br>Como seu cabelo é cacheado ou volumoso, recomendamos cortes em camadas para valorizar o volume.";
+        }
+
+        resultado += `<br><br>Em caso de dúvidas, fale conosco pelo <a href="http://wa.me/message/NJSWFOS4GCHXA1" target="_blank">WhatsApp</a>.`;
+
+        resultadoDiv.innerHTML = resultado;
+    });
+</script>
+
 </body>
 </html>
