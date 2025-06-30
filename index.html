@@ -3,164 +3,130 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BHB Concept Beauty</title>
+    <title>Ficha de Anamnese Capilar</title>
     <style>
         body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #fde4ec;
-            color: #5a2a41;
-        }
-        header {
-            background-color: #a2446d;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        header img {
-            height: 40px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
+            font-family: Arial, sans-serif;
+            padding: 20px;
         }
         .container {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            text-align: center;
+            margin: auto;
+            background-color: #ffeef5;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         h1 {
-            font-size: 2.2rem;
+            text-align: center;
             color: #a2446d;
-            font-family: 'Brush Script MT', cursive;
-        }
-        p.description {
-            font-size: 1.1rem;
-            color: #7a3b57;
-            margin-bottom: 2rem;
         }
         label {
             display: block;
-            margin-top: 20px;
+            margin-top: 15px;
             font-weight: bold;
-            color: #4b1d33;
-            text-align: left;
         }
-        select, textarea {
+        input[type="text"], input[type="email"], input[type="date"], textarea, select {
             width: 100%;
-            padding: 10px;
+            padding: 8px;
             margin-top: 5px;
-            border-radius: 6px;
             border: 1px solid #ccc;
-            font-size: 1rem;
+            border-radius: 5px;
+        }
+        .checkbox-group, .radio-group {
+            margin-top: 10px;
+        }
+        .checkbox-group label, .radio-group label {
+            display: block;
+            font-weight: normal;
         }
         button {
-            display: block;
+            margin-top: 20px;
+            padding: 12px;
             width: 100%;
-            padding: 14px;
             background-color: #d98ca7;
             color: white;
-            font-size: 1.05rem;
-            font-weight: bold;
             border: none;
-            border-radius: 6px;
-            margin-top: 25px;
-            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
         }
-        button:hover {
-            background-color: #c07290;
-        }
-        #resultado {
-            margin-top: 30px;
-            font-size: 1.1rem;
-            color: #5a2a41;
-            font-weight: 500;
+        a.menu-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #a2446d;
+            padding: 10px 20px;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="https://raw.githubusercontent.com/conceptbeauty7/site-salao/main/logo.png" alt="Logo do Salão">
-        <nav>
-            <a href="index.html">Descubra seu Estilo</a>
-            <a href="anamnese.html">Ficha de Anamnese</a>
-        </nav>
-    </header>
-
     <div class="container">
-        <h1>Descubra o cuidado ideal para seu cabelo</h1>
-        <p class="description">Responda às perguntas abaixo e descubra!</p>
-        <form id="quizForm">
-            <label for="tipo">Como você descreveria seu tipo de cabelo?</label>
-            <select id="tipo" name="tipo" required>
-                <option value="">Selecione</option>
-                <option value="liso">Liso</option>
-                <option value="ondulado">Ondulado</option>
-                <option value="cacheado">Cacheado ou volumoso</option>
-                <option value="crespo">Crespo</option>
-            </select>
+        <a href="index.html" class="menu-button">⬅ Voltar ao menu</a>
+        <h1>Ficha de Anamnese Capilar</h1>
+        <form action="https://formsubmit.co/santocamilly3@gmail.com" method="POST">
+            <label>Nome completo:</label>
+            <input type="text" name="Nome completo" required>
 
-            <label for="ressecado">Seu cabelo está ressecado?</label>
-            <select id="ressecado" name="ressecado" required>
-                <option value="">Selecione</option>
-                <option value="nao">Não</option>
-                <option value="pouco">Pouco</option>
-                <option value="muito">Muito</option>
-            </select>
+            <label>Data de nascimento:</label>
+            <input type="date" name="Data de nascimento">
 
-            <label for="quimica">Com que frequência você usa química?</label>
-            <select id="quimica" name="quimica" required>
-                <option value="">Selecione</option>
-                <option value="nunca">Nunca</option>
-                <option value="asvezes">Às vezes</option>
-                <option value="frequente">Frequentemente</option>
-            </select>
+            <label>Início do Protocolo Capilar:</label>
+            <input type="date" name="Início do Protocolo Capilar">
 
-            <label for="queda">Você percebe queda ou quebra?</label>
-            <select id="queda" name="queda" required>
-                <option value="">Selecione</option>
-                <option value="nao">Não</option>
-                <option value="leve">Queda leve</option>
-                <option value="muita">Muita quebra</option>
-            </select>
+            <label>Sexo:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="Sexo" value="Feminino"> Feminino</label>
+                <label><input type="radio" name="Sexo" value="Masculino"> Masculino</label>
+            </div>
 
-            <button type="submit">Ver Resultado</button>
+            <label>1. Qual a sua queixa principal em relação ao couro cabeludo?</label>
+            <textarea name="Queixa principal"></textarea>
+
+            <label>2. Essa queixa afeta outras áreas do corpo?</label>
+            <div class="radio-group">
+                <label><input type="radio" name="Afeta outras áreas" value="Sim"> Sim</label>
+                <label><input type="radio" name="Afeta outras áreas" value="Não"> Não</label>
+            </div>
+            <input type="text" name="Quais áreas" placeholder="Se sim, quais?">
+
+            <label>3. Faz quanto tempo que você começou com este problema?</label>
+            <input type="text" name="Tempo de problema">
+
+            <label>4. Está associado a alguma doença sazonal ou congênita?</label>
+            <input type="text" name="Associação com doença">
+
+            <label>5. O problema está:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="Problema está" value="Aumentando"> Aumentando</label>
+                <label><input type="radio" name="Problema está" value="Estável"> Estável</label>
+                <label><input type="radio" name="Problema está" value="Diminuindo"> Diminuindo</label>
+            </div>
+
+            <label>6. Quais dessas alterações você apresenta no couro cabeludo?</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="Alterações couro[]" value="Dor"> Dor</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Coceira"> Coceira</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Ardor"> Ardor</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Inflamação"> Inflamação</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Feridas"> Feridas</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Sensibilidade"> Sensibilidade</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Caspa"> Caspa</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Oleosidade"> Oleosidade</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Odor"> Odor</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Descamação"> Descamação</label>
+            </div>
+            <input type="text" name="Alterações couro - outros" placeholder="Outros">
+
+            <!-- Continuação seria colocada aqui... -->
+
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="http://wa.me/message/NJSWFOS4GCHXA1">
+
+            <button type="submit">Enviar formulário</button>
         </form>
-
-        <div id="resultado"></div>
     </div>
-
-    <script>
-        document.getElementById("quizForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const tipo = document.getElementById("tipo").value;
-            const ressecado = document.getElementById("ressecado").value;
-            const quimica = document.getElementById("quimica").value;
-            const queda = document.getElementById("queda").value;
-
-            let resultado = "";
-
-            if (!tipo || !ressecado || !quimica || !queda) {
-                resultado = "Por favor, responda todas as perguntas.";
-            } else if (ressecado === "muito" || quimica === "frequente" || queda === "muita") {
-                resultado = "Seu cabelo precisa de cuidados intensivos! Recomendamos terapia capilar e hidratação profunda. Vá até o menu e preencha a Ficha de Anamnese. ";
-            } else if (ressecado === "pouco" || quimica === "asvezes") {
-                resultado = "Um cronograma leve de nutrição e hidratação já fará diferença. Corte bordado pode ajudar também!";
-            } else {
-                resultado = "Seu cabelo está saudável! Mantenha os cuidados básicos e agende uma avaliação quando quiser.";
-            }
-
-            document.getElementById("resultado").textContent = resultado;
-        });
-    </script>
 </body>
 </html>
