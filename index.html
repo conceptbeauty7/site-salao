@@ -2,116 +2,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Descubra seu Estilo</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #fde4ec;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav {
-            background-color: #f8c7d8;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            color: #93375f;
-        }
-
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            color: #a2446d;
-            font-family: 'Brush Script MT', cursive;
-        }
-
-        p.description {
-            font-size: 1rem;
-            color: #7a3b57;
-            margin-bottom: 2rem;
-        }
-
-        form {
-            text-align: left;
-        }
-
-        label {
-            display: block;
-            margin-top: 20px;
-            font-weight: bold;
-            color: #4b1d33;
-            font-size: 1.05rem;
-        }
-
-        select {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
-        }
-
-        button {
-            display: block;
-            width: 100%;
-            padding: 14px;
-            background-color: #d98ca7;
-            color: white;
-            font-size: 1.05rem;
-            font-weight: bold;
-            border: none;
-            border-radius: 6px;
-            margin-top: 25px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #c07290;
-        }
-
-        #resultado {
-            margin-top: 30px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #5a2a41;
-        }
-
-        #mensagemErro {
-            margin-top: 20px;
-            color: #a1002d;
-            font-style: italic;
-            font-weight: 500;
-            border: 2px solid #a1002d;
-            padding: 5px;
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 6px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra o Cuidado Ideal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <a href="index.html">Descubra seu Estilo</a>
-        <a href="anamnese.html">Ficha de Anamnese</a>
-    </nav>
     <div class="container">
         <h1>Descubra o cuidado ideal para seu cabelo</h1>
         <p class="description">Responda às perguntas abaixo e descubra!</p>
@@ -154,57 +50,6 @@
         <div id="resultado"></div>
         <div id="mensagemErro"></div>
     </div>
-
-    <script>
-        document.getElementById("quizForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            const tipo = document.getElementById("tipo").value;
-            const ressecado = document.getElementById("ressecado").value;
-            const quimica = document.getElementById("quimica").value;
-            const queda = document.getElementById("queda").value;
-            const resultadoDiv = document.getElementById("resultado");
-            const erroDiv = document.getElementById("mensagemErro");
-
-            resultadoDiv.textContent = "";
-            erroDiv.textContent = "";
-
-            if (!tipo || !ressecado || !quimica || !queda) {
-                erroDiv.textContent = "Por favor, responda todas as perguntas.";
-                return;
-            }
-
-            let tratamento = 0;
-            let nutricao = 0;
-            let corteEspecial = 0;
-
-            if (ressecado === "muito") tratamento++;
-            if (ressecado === "pouco") nutricao++;
-
-            if (quimica === "frequente") tratamento++;
-            if (quimica === "asvezes") nutricao++;
-
-            if (queda === "muita") tratamento++;
-            if (queda === "leve") nutricao++;
-
-            if (tipo === "cacheado") corteEspecial++;
-
-            let resultado = "";
-
-            if (tratamento >= 2) {
-                resultado = "Seu cabelo demonstra sinais de danos. Recomendamos um cronograma capilar com foco em reconstrução e hidratações profundas.";
-            } else if (nutricao >= 2) {
-                resultado = "Seu cabelo está saudável mas com leve ressecamento. Aposte em nutrições semanais com óleos vegetais e corte bordado.";
-            } else {
-                resultado = "Seu cabelo está em boa condição geral. Um corte de manutenção e hidratação leve são ideais neste momento.";
-            }
-
-            if (corteEspecial) {
-                resultado += " Como seu cabelo é cacheado ou volumoso, recomendamos cortes em camadas ou técnicas como o corte em U para valorizar os cachos.";
-            }
-
-            resultadoDiv.textContent = resultado;
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
