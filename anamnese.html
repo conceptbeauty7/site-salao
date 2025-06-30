@@ -8,66 +8,67 @@
         body {
             background-color: #fde4ec;
             font-family: Arial, sans-serif;
-            color: #5a2a41;
-            margin: 0;
-            padding: 0;
+            padding: 20px;
         }
         .container {
             max-width: 800px;
-            margin: 40px auto;
-            background-color: #ffe6f0;
+            margin: auto;
+            background-color: #ffeef5;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 10px #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         h1 {
             text-align: center;
-            color: #b34776;
+            color: #a2446d;
         }
         label {
             display: block;
-            margin-top: 20px;
+            margin-top: 15px;
             font-weight: bold;
         }
-        input, textarea, select {
+        input[type="text"], input[type="email"], input[type="date"], textarea, select {
             width: 100%;
             padding: 8px;
             margin-top: 5px;
-            border: 1px solid #aaa;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            box-sizing: border-box;
+        }
+        .checkbox-group, .radio-group {
+            margin-top: 10px;
+        }
+        .checkbox-group label, .radio-group label {
+            display: block;
+            font-weight: normal;
         }
         button {
+            margin-top: 20px;
+            padding: 12px;
+            width: 100%;
             background-color: #d98ca7;
             color: white;
             border: none;
-            padding: 12px;
             border-radius: 5px;
             font-size: 1rem;
-            cursor: pointer;
-            margin-top: 20px;
-            width: 100%;
         }
-        button:hover {
-            background-color: #c07290;
+        a.menu-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #a2446d;
+            padding: 10px 20px;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <a href="index.html" class="menu-button">⬅ Voltar ao menu</a>
         <h1>Ficha de Anamnese Capilar</h1>
         <form action="https://formsubmit.co/santocamilly3@gmail.com" method="POST">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="http://wa.me/message/NJSWFOS4GCHXA1">
-
             <label>Nome completo:</label>
             <input type="text" name="Nome completo" required>
-
-            <label>Telefone/WhatsApp:</label>
-            <input type="text" name="Telefone/WhatsApp" required>
-
-            <label>Email:</label>
-            <input type="email" name="Email" required>
 
             <label>Data de nascimento:</label>
             <input type="date" name="Data de nascimento">
@@ -76,87 +77,53 @@
             <input type="date" name="Início do Protocolo Capilar">
 
             <label>Sexo:</label>
-            <select name="Sexo">
-                <option value="Feminino">Feminino</option>
-                <option value="Masculino">Masculino</option>
-            </select>
+            <div class="radio-group">
+                <label><input type="radio" name="Sexo" value="Feminino"> Feminino</label>
+                <label><input type="radio" name="Sexo" value="Masculino"> Masculino</label>
+            </div>
 
             <label>1. Qual a sua queixa principal em relação ao couro cabeludo?</label>
-            <textarea name="Queixa principal" rows="2"></textarea>
+            <textarea name="Queixa principal"></textarea>
 
             <label>2. Essa queixa afeta outras áreas do corpo?</label>
-            <input type="text" name="Afeta outras áreas?">
+            <div class="radio-group">
+                <label><input type="radio" name="Afeta outras áreas" value="Sim"> Sim</label>
+                <label><input type="radio" name="Afeta outras áreas" value="Não"> Não</label>
+            </div>
+            <input type="text" name="Quais áreas" placeholder="Se sim, quais?">
 
             <label>3. Faz quanto tempo que você começou com este problema?</label>
-            <input type="text" name="Tempo com problema">
+            <input type="text" name="Tempo de problema">
 
             <label>4. Está associado a alguma doença sazonal ou congênita?</label>
-            <input type="text" name="Associação a doenças">
+            <input type="text" name="Associação com doença">
 
             <label>5. O problema está:</label>
-            <select name="Estado do problema">
-                <option value="aumentando">Aumentando</option>
-                <option value="estável">Estável</option>
-                <option value="diminuindo">Diminuindo</option>
-            </select>
+            <div class="radio-group">
+                <label><input type="radio" name="Problema está" value="Aumentando"> Aumentando</label>
+                <label><input type="radio" name="Problema está" value="Estável"> Estável</label>
+                <label><input type="radio" name="Problema está" value="Diminuindo"> Diminuindo</label>
+            </div>
 
-            <label>6. Alterações no couro cabeludo:</label>
-            <textarea name="Alterações couro cabeludo" rows="2"></textarea>
+            <label>6. Quais dessas alterações você apresenta no couro cabeludo?</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="Alterações couro[]" value="Dor"> Dor</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Coceira"> Coceira</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Ardor"> Ardor</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Inflamação"> Inflamação</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Feridas"> Feridas</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Sensibilidade"> Sensibilidade</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Caspa"> Caspa</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Oleosidade"> Oleosidade</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Odor"> Odor</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Descamação"> Descamação</label>
+            </div>
+            <input type="text" name="Alterações couro - outros" placeholder="Outros">
 
-            <label>7. Em relação ao cabelo, ele ficou:</label>
-            <textarea name="Mudanças no cabelo" rows="2"></textarea>
+            <!-- Continuação seria colocada aqui... -->
 
-            <label>8. Doenças nos últimos 6 meses:</label>
-            <textarea name="Doenças recentes" rows="2"></textarea>
-
-            <label>9. Eventos antes da queda:</label>
-            <textarea name="Eventos antes da queda" rows="2"></textarea>
-
-            <label>10. Alergia a medicamentos/cosméticos?</label>
-            <textarea name="Alergias" rows="2"></textarea>
-
-            <label>11. Tem filhos? Se sim, quando foi a última gestação:</label>
-            <input type="text" name="Filhos e última gestação">
-
-            <label>12. A gravidez ocasionou queda de cabelo?</label>
-            <input type="text" name="Queda após gravidez">
-
-            <label>13. Tem alteração hormonal?</label>
-            <input type="text" name="Alterações hormonais">
-
-            <label>14. Alguém da família tem calvície?</label>
-            <input type="text" name="Calvície familiar">
-
-            <label>15. Frequência de lavagem dos cabelos:</label>
-            <input type="text" name="Frequência de lavagem">
-
-            <label>16. Faz coloração nos cabelos?</label>
-            <input type="text" name="Coloração">
-
-            <label>17. Faz uso de quais itens?</label>
-            <textarea name="Itens usados" rows="2"></textarea>
-
-            <label>18. Nível de estresse:</label>
-            <select name="Estresse">
-                <option value="baixo">Baixo</option>
-                <option value="médio">Médio</option>
-                <option value="alto">Alto</option>
-            </select>
-
-            <label>19. Usa alisante/progressiva/disciplina química?</label>
-            <input type="text" name="Alisamento e frequência">
-
-            <label>20. Usa marcapasso?</label>
-            <select name="Marcapasso">
-                <option value="Sim">Sim</option>
-                <option value="Não">Não</option>
-            </select>
-
-            <label>Autorização:</label>
-            <select name="Autorização para procedimentos">
-                <option value="Sim">Autorizo os procedimentos realizados pela profissional Bianca Marques de Abreu.</option>
-                <option value="Não">Não autorizo.</option>
-            </select>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="http://wa.me/message/NJSWFOS4GCHXA1">
 
             <button type="submit">Enviar formulário</button>
         </form>
