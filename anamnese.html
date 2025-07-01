@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -67,8 +66,9 @@
 <body>
   <div class="container">
     <h1>Ficha de Anamnese Capilar</h1>
-    <form id="form-anamnese" action="https://formsubmit.co/santocamilly3@gmail.com" method="POST" target="formsubmit_iframe">
+    <form action="https://formsubmit.co/santocamilly3@gmail.com" method="POST">
       <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://bhbconceptbeauty.github.io/agradecimento.html">
 
       <label>Nome completo:</label>
       <input type="text" name="Nome" required>
@@ -109,6 +109,87 @@
         <label><input type="radio" name="Situação do problema" value="Diminuindo"> Diminuindo</label>
       </div>
 
+      <label>6. Quais dessas alterações você apresenta no couro cabeludo?</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="Alterações couro cabeludo[]" value="Dor"> Dor</label>
+        <label><input type="checkbox" name="Alterações couro cabeludo[]" value="Coceira"> Coceira</label>
+        <label><input type="checkbox" name="Alterações couro cabeludo[]" value="Ardor"> Ardor</label>
+        <label><input type="checkbox" name="Alterações couro cabeludo[]" value="Inflamação"> Inflamação</label>
+        <label><input type="checkbox" name="Alterações couro cabeludo[]" value="Feridas"> Feridas</label>
+        <label><input type="checkbox" name="Alterações couro cabeludo[]" value="Sensibilidade"> Sensibilidade</label>
+        <label><input type="checkbox" name="Alterações couro cabeludo[]" value="Caspa"> Caspa</label>
+        <label><input type="checkbox" name="Alterações couro cabeludo[]" value="Oleosidade"> Oleosidade</label>
+        <label><input type="checkbox" name="Alterações couro cabeludo[]" value="Odor"> Odor</label>
+        <label><input type="checkbox" name="Alterações couro cabeludo[]" value="Descamação"> Descamação</label>
+      </div>
+      <input type="text" name="Outras alterações" placeholder="Outros">
+
+      <label>7. Em relação ao cabelo com o passar do tempo, ele ficou:</label>
+      <textarea name="Alterações no fio"></textarea>
+
+      <label>8. Descreva últimas doenças relevantes (últimos 6 meses):</label>
+      <textarea name="Doenças últimos 6 meses"></textarea>
+
+      <label>9. Se tem queda de cabelo atual, nos meses que antecederam este evento, você:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="Eventos antes da queda[]" value="Fez dietas"> fez dietas</label>
+        <label><input type="checkbox" name="Eventos antes da queda[]" value="Emagreceu"> emagreceu</label>
+        <label><input type="checkbox" name="Eventos antes da queda[]" value="Engordou"> engordou</label>
+        <label><input type="checkbox" name="Eventos antes da queda[]" value="Emocional"> emocional</label>
+        <label><input type="checkbox" name="Eventos antes da queda[]" value="Cirurgia"> cirurgia</label>
+        <label><input type="checkbox" name="Eventos antes da queda[]" value="Trauma"> teve algum trauma</label>
+      </div>
+      <input type="text" name="Eventos antes da queda outros" placeholder="Outros">
+
+      <label>10. Alergia a medicamentos/cosméticos?</label>
+      <textarea name="Alergia a medicamentos"></textarea>
+
+      <label>11. Tem filhos? Se sim, quando foi a última gestação:</label>
+      <textarea name="Filhos e gestação"></textarea>
+
+      <label>12. A gravidez ocasionou queda de cabelo?</label>
+      <textarea name="Queda pós-gestação"></textarea>
+
+      <label>13. Tem alguma alteração hormonal? Qual:</label>
+      <textarea name="Alteração hormonal"></textarea>
+
+      <label>14. Alguém da família tem calvície? Quem:</label>
+      <textarea name="Histórico familiar calvície"></textarea>
+
+      <label>15. Frequência de lavagem dos cabelos:</label>
+      <input type="text" name="Frequência lavagem">
+
+      <label>16. Faz coloração nos cabelos? Tipo/Frequência:</label>
+      <input type="text" name="Coloração tipo frequência">
+
+      <label>17. Faz uso de quais desses itens?</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="Itens uso[]" value="Gel"> Gel</label>
+        <label><input type="checkbox" name="Itens uso[]" value="Boné/Chapéu"> Boné/Chapéu</label>
+        <label><input type="checkbox" name="Itens uso[]" value="Penteados presos"> Penteados presos</label>
+        <label><input type="checkbox" name="Itens uso[]" value="Escova"> Escova</label>
+        <label><input type="checkbox" name="Itens uso[]" value="Baby liss"> Baby liss</label>
+        <label><input type="checkbox" name="Itens uso[]" value="Secador"> Secador</label>
+        <label><input type="checkbox" name="Itens uso[]" value="Apliques"> Apliques</label>
+        <label><input type="checkbox" name="Itens uso[]" value="Prancha térmica"> Prancha térmica</label>
+      </div>
+
+      <label>18. Classifique seu nível de estresse:</label>
+      <div class="radio-group">
+        <label><input type="radio" name="Estresse" value="Baixo"> Baixo</label>
+        <label><input type="radio" name="Estresse" value="Médio"> Médio</label>
+        <label><input type="radio" name="Estresse" value="Alto"> Alto</label>
+      </div>
+
+      <label>19. Você faz uso de alisante, progressiva ou disciplinantes?</label>
+      <input type="text" name="Uso de químicas">
+
+      <label>20. Usa marcapasso?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="Marcapasso" value="Sim"> Sim</label>
+        <label><input type="radio" name="Marcapasso" value="Não"> Não</label>
+      </div>
+
       <label style="margin-top:15px;">
         <input type="checkbox" name="Autorização" required>
         Autorizo e estou de acordo, com os procedimentos realizados e/ou à serem pela profissional Bianca Marques de Abreu.
@@ -116,22 +197,6 @@
 
       <button type="submit">Enviar formulário</button>
     </form>
-
-    <div id="mensagem-final" class="thank-you" style="display:none;">
-      Obrigada por preencher o formulário!<br><br>
-      <a href="https://wa.me/message/NJSWFOS4GCHXA1" target="_blank">Clique aqui para falar conosco no WhatsApp</a>
-    </div>
-
-    <iframe name="formsubmit_iframe" style="display:none;"></iframe>
   </div>
-
-  <script>
-    document.getElementById('form-anamnese').addEventListener('submit', function () {
-      setTimeout(function () {
-        document.getElementById('form-anamnese').style.display = 'none';
-        document.getElementById('mensagem-final').style.display = 'block';
-      }, 1000);
-    });
-  </script>
 </body>
 </html>
