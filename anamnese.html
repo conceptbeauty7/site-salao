@@ -68,7 +68,6 @@
     <h1>Ficha de Anamnese Capilar</h1>
     <form action="https://formsubmit.co/santocamilly3@gmail.com" method="POST">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://bhbconceptbeauty.github.io/agradecimento.html">
 
       <label>Nome completo:</label>
       <input type="text" name="Nome" required>
@@ -190,13 +189,24 @@
         <label><input type="radio" name="Marcapasso" value="Não"> Não</label>
       </div>
 
-      <label style="margin-top:15px;">
-        <input type="checkbox" name="Autorização" required>
-        Autorizo e estou de acordo, com os procedimentos realizados e/ou à serem pela profissional Bianca Marques de Abreu.
-      </label>
-
       <button type="submit">Enviar formulário</button>
     </form>
   </div>
+
+  <script>
+    document.getElementById('form-anamnese').addEventListener('submit', function () {
+      setTimeout(function () {
+        document.getElementById('form-anamnese').style.display = 'none';
+        window.location.href = "http://wa.me/message/NJSWFOS4GCHXA1"; // link do WPP
+      }, 1000);
+    });
+  </script>
 </body>
 </html>
+"""
+
+# Salvar o arquivo novamente
+file_path = "/mnt/data/anamnese_atualizado.html"
+Path(file_path).write_text(formulario_html, encoding="utf-8")
+
+file_path
