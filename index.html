@@ -4,114 +4,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BHB Concept Beauty</title>
+    <title>Descubra seu Estilo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #FFE6F0;
+            background-color: #ffe6f0;
             margin: 0;
             padding: 0;
         }
         .navbar {
-            background-color: #E7A1B0;
+            background-color: #e6a8b1;
+            padding: 10px 0;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
-            padding: 10px;
-            flex-wrap: wrap;
         }
         .navbar img {
-            height: 50px;
+            max-height: 50px;
+            margin-left: 20px;
         }
         .navbar a {
-            text-decoration: none;
-            color: #6D2E46;
+            margin-right: 15px;
             font-weight: bold;
-            margin: 0 10px;
+            text-decoration: none;
+            color: #5a2a41;
         }
         .container {
             max-width: 700px;
-            margin: 0 auto;
+            margin: 30px auto;
+            background-color: #ffe6f0;
             padding: 20px;
-            background-color: #FFEAF4;
             border-radius: 10px;
-            box-shadow: 0 0 10px #ccc;
         }
         h1 {
-            color: #B1456B;
             text-align: center;
+            color: #b83b63;
         }
         label {
             display: block;
-            margin: 10px 0 5px;
+            margin: 15px 0 5px;
+            font-weight: bold;
+            color: #5a2a41;
         }
-        select, input[type="text"] {
+        select, button {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
             border: 1px solid #ccc;
-            border-radius: 5px;
         }
-        .button {
-            background-color: #D77A9C;
+        button {
+            background-color: #e6a8b1;
             color: white;
-            border: none;
-            padding: 10px 20px;
+            font-weight: bold;
+            margin-top: 20px;
             cursor: pointer;
-            width: 100%;
-            font-size: 16px;
-            border-radius: 5px;
         }
         .whatsapp-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
             background-color: #25D366;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 14px;
-            text-decoration: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .whatsapp-button img {
+            width: 30px;
+            height: 30px;
         }
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <img src="logo_salao_redimensionada.png" alt="Logo do Salão">
+
+<div class="navbar">
+    <img src="bhb.png" alt="Logo do Salão">
+    <div>
         <a href="index.html">Descubra seu Estilo</a>
         <a href="anamnese.html">Ficha de Anamnese</a>
     </div>
-    <div class="container">
-        <h1>Descubra o cuidado ideal para seu cabelo</h1>
-        <form>
-            <label>Como você descreveria seu tipo de cabelo?</label>
-            <select><option>Selecione</option></select>
+</div>
 
-            <label>Seu cabelo está ressecado?</label>
-            <select><option>Selecione</option></select>
+<div class="container">
+    <h1>Descubra o cuidado ideal para seu cabelo</h1>
+    <p style="text-align: center;">Responda às perguntas abaixo e descubra!</p>
 
-            <label>Com que frequência você usa química?</label>
-            <select><option>Selecione</option></select>
+    <form id="quizForm">
+        <label>Como você descreveria seu tipo de cabelo?</label>
+        <select><option>Selecione</option></select>
 
-            <label>Você percebe queda ou quebra?</label>
-            <select><option>Selecione</option></select>
+        <label>Seu cabelo está ressecado?</label>
+        <select><option>Selecione</option></select>
 
-            <label>Qual seu estilo preferido?</label>
-            <select><option>Selecione</option></select>
+        <label>Com que frequência você usa química?</label>
+        <select><option>Selecione</option></select>
 
-            <label>O que você busca com um novo corte/procedimento?</label>
-            <select><option>Selecione</option></select>
+        <label>Você percebe queda ou quebra?</label>
+        <select><option>Selecione</option></select>
 
-            <label>Com que frequência você hidrata o cabelo em casa?</label>
-            <select><option>Selecione</option></select>
+        <label>Qual seu estilo preferido?</label>
+        <select><option>Selecione</option></select>
 
-            <label>Você faz algum tipo de cronograma capilar?</label>
-            <select><option>Selecione</option></select>
+        <label>O que você busca com um novo corte/procedimento?</label>
+        <select><option>Selecione</option></select>
 
-            <button class="button" type="submit">Ver Resultado</button>
-        </form>
-    </div>
-    <a class="whatsapp-button" href="http://wa.me/message/NJSWFOS4GCHXA1" target="_blank">Fale conosco</a>
+        <label>Com que frequência você hidrata o cabelo em casa?</label>
+        <select><option>Selecione</option></select>
+
+        <label>Você faz algum tipo de cronograma capilar?</label>
+        <select><option>Selecione</option></select>
+
+        <button type="submit">Ver Resultado</button>
+    </form>
+</div>
+
+<a class="whatsapp-button" href="http://wa.me/message/NJSWFOS4GCHXA1" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
 </body>
 </html>
