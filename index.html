@@ -2,190 +2,172 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>BHB Concept Beauty</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <title>Quiz Capilar - BHB Concept Beauty</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background-color: #ffe6f0;
             font-family: Arial, sans-serif;
+            background-color: #fde4ec;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #e89daf;
+            background-color: #db8ea2;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 5px 15px;
+            justify-content: space-between;
+            padding: 10px 20px;
         }
         header img {
             max-height: 50px;
         }
-        header nav a {
+        nav a {
             margin-left: 20px;
-            text-decoration: none;
             color: black;
+            text-decoration: none;
             font-weight: bold;
         }
-        main {
-            background-color: #ffe6f0;
+        .container {
+            max-width: 700px;
+            background-color: #ffe9f0;
+            margin: 40px auto;
             padding: 20px;
-            max-width: 600px;
-            margin: auto;
             border-radius: 10px;
-        }
-        h1 {
-            text-align: center;
-            color: #b03060;
-        }
-        .result-box {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #fdd;
-            border: 1px solid #f99;
-            border-radius: 5px;
             text-align: center;
         }
-        label, select {
-            display: block;
-            margin: 10px 0;
+        select, button {
             width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
         button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #e89daf;
-            border: none;
-            border-radius: 5px;
+            background-color: #d17994;
             color: white;
             font-weight: bold;
             cursor: pointer;
         }
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            font-size: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        @media (max-width: 600px) {
+            nav a {
+                margin-left: 10px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <img src="bhb.png" alt="Logo do Salão">
-        <nav>
-            <a href="index.html">Descubra seu Estilo</a>
-            <a href="anamnese.html">Ficha de Anamnese</a>
-        </nav>
-    </header>
-    <main>
-        <h1>Descubra o cuidado ideal para seu cabelo</h1>
-        <p>Responda às perguntas abaixo e descubra!</p>
+<header>
+    <img src="bhb.png" alt="Logo do Salão">
+    <nav>
+        <a href="index.html">Descubra seu Estilo</a>
+        <a href="anamnese.html">Ficha de Anamnese</a>
+    </nav>
+</header>
 
-        <form id="quizForm">
-            <label>Como você descreveria seu tipo de cabelo?
-                <select name="tipo">
-                    <option>Selecione</option>
-                    <option>Liso</option>
-                    <option>Ondulado</option>
-                    <option>Cacheado</option>
-                    <option>Crespo</option>
-                </select>
-            </label>
+<div class="container">
+    <h2>Descubra o cuidado ideal para seu cabelo</h2>
+    <p>Responda às perguntas abaixo e descubra!</p>
 
-            <label>Seu cabelo está ressecado?
-                <select name="ressecado">
-                    <option>Selecione</option>
-                    <option>Sim</option>
-                    <option>Não</option>
-                </select>
-            </label>
+    <select id="tipoCabelo">
+        <option value="">Como você descreveria seu tipo de cabelo?</option>
+        <option value="liso">Liso</option>
+        <option value="ondulado">Ondulado</option>
+        <option value="cacheado">Cacheado</option>
+        <option value="crespo">Crespo</option>
+    </select>
 
-            <label>Com que frequência você usa química?
-                <select name="quimica">
-                    <option>Selecione</option>
-                    <option>Nunca</option>
-                    <option>1x ao mês</option>
-                    <option>2x ao mês</option>
-                    <option>Mais de 2x ao mês</option>
-                </select>
-            </label>
+    <select id="ressecado">
+        <option value="">Seu cabelo está ressecado?</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+    </select>
 
-            <label>Você percebe queda ou quebra?
-                <select name="queda">
-                    <option>Selecione</option>
-                    <option>Queda</option>
-                    <option>Quebra</option>
-                    <option>Ambos</option>
-                    <option>Não</option>
-                </select>
-            </label>
+    <select id="quimica">
+        <option value="">Com que frequência você usa química?</option>
+        <option value="nenhuma">Nenhuma</option>
+        <option value="1x_mes">1x ao mês</option>
+        <option value="frequente">Mais de 1x ao mês</option>
+    </select>
 
-            <label>Qual seu estilo preferido?
-                <select name="estilo">
-                    <option>Selecione</option>
-                    <option>Clássico</option>
-                    <option>Romântico</option>
-                    <option>Moderno</option>
-                    <option>Descolado</option>
-                </select>
-            </label>
+    <select id="queda">
+        <option value="">Você percebe queda ou quebra?</option>
+        <option value="queda">Queda</option>
+        <option value="quebra">Quebra</option>
+        <option value="ambos">Ambos</option>
+        <option value="nao">Não</option>
+    </select>
 
-            <label>O que você busca com um novo corte/procedimento?
-                <select name="objetivo">
-                    <option>Selecione</option>
-                    <option>Volume</option>
-                    <option>Definição</option>
-                    <option>Alongamento</option>
-                    <option>Redução de volume</option>
-                </select>
-            </label>
+    <select id="estilo">
+        <option value="">Qual seu estilo preferido?</option>
+        <option value="classico">Clássico</option>
+        <option value="moderno">Moderno</option>
+        <option value="ousado">Ousado</option>
+    </select>
 
-            <label>Com que frequência você hidrata o cabelo em casa?
-                <select name="hidrata">
-                    <option>Selecione</option>
-                    <option>Nunca</option>
-                    <option>1x por semana</option>
-                    <option>1x a cada 15 dias</option>
-                    <option>1x ao mês</option>
-                </select>
-            </label>
+    <select id="busca">
+        <option value="">O que você busca com um novo corte/procedimento?</option>
+        <option value="volume">Mais volume</option>
+        <option value="definicao">Definição</option>
+        <option value="alisamento">Alisamento</option>
+        <option value="tratamento">Tratamento</option>
+    </select>
 
-            <label>Você faz algum tipo de cronograma capilar?
-                <select name="cronograma">
-                    <option>Selecione</option>
-                    <option>Sim</option>
-                    <option>Não</option>
-                    <option>Às vezes</option>
-                    <option>Não sei o que é</option>
-                </select>
-            </label>
+    <select id="hidrata">
+        <option value="">Com que frequência você hidrata o cabelo em casa?</option>
+        <option value="1x_semana">1x por semana</option>
+        <option value="1x_quinzena">1x a cada 15 dias</option>
+        <option value="raro">Raramente</option>
+    </select>
 
-            <button type="button" onclick="verResultado()">Ver Resultado</button>
-        </form>
+    <select id="cronograma">
+        <option value="">Você faz algum tipo de cronograma capilar?</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+        <option value="nao_sabe">Não sei o que é</option>
+    </select>
 
-        <div class="result-box" id="resultado"></div>
-    </main>
+    <button onclick="verResultado()">Ver Resultado</button>
 
-    <script>
-        function verResultado() {
-            const form = document.forms['quizForm'];
-            const tipo = form['tipo'].value;
-            const ressecado = form['ressecado'].value;
-            const queda = form['queda'].value;
-            const cronograma = form['cronograma'].value;
+    <p id="resultado" style="margin-top: 20px; font-weight: bold;"></p>
+</div>
 
-            let resultado = "";
+<a href="http://wa.me/message/NJSWFOS4GCHXA1" target="_blank" class="whatsapp-btn">💬</a>
 
-            if (ressecado === "Sim" || queda === "Queda" || queda === "Ambos" || cronograma === "Não" || cronograma === "Não sei o que é") {
-                resultado = `
-                    Seu cabelo está precisando de cuidados mais específicos.<br>
-                    Recomendamos iniciar um tratamento com cronograma capilar.<br><br>
-                    👉 <a href="anamnese.html" target="_blank"><b>Clique aqui para acessar a Ficha de Anamnese</b></a>
-                `;
-            } else {
-                resultado = "Seu cabelo parece estar equilibrado! Continue cuidando bem dele. 🌟";
-            }
+<script>
+    function verResultado() {
+        const ressecado = document.getElementById("ressecado").value;
+        const cronograma = document.getElementById("cronograma").value;
+        const queda = document.getElementById("queda").value;
 
-            document.getElementById("resultado").innerHTML = resultado;
+        let msg = "";
+
+        if ((ressecado === "sim" || queda === "queda" || queda === "ambos") && cronograma !== "sim") {
+            msg = "Recomendamos iniciar um Cronograma Capilar! Para um diagnóstico mais preciso, acesse a <a href='anamnese.html'>Ficha de Anamnese</a>.";
+        } else {
+            msg = "Você está no caminho certo! Continue cuidando bem dos seus fios.";
         }
-    </script>
+
+        document.getElementById("resultado").innerHTML = msg;
+    }
+</script>
 </body>
 </html>
