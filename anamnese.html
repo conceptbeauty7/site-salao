@@ -6,101 +6,201 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anamnese Capilar</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #fde4ec; color: #5a2a41; margin: 0; padding: 20px; }
-        .container { max-width: 800px; margin: auto; background: #fff0f5; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1 { text-align: center; color: #c85a7c; }
-        label { display: block; margin-top: 15px; font-weight: bold; }
-        input[type="text"], input[type="email"], input[type="date"], textarea, select {
-            width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc;
+        body {
+            background-color: #fde4ec;
+            font-family: Arial, sans-serif;
+            padding: 20px;
         }
-        .form-section { margin-top: 25px; }
-        .radio-group, .checkbox-group { margin-left: 20px; margin-top: 10px; }
-        button { margin-top: 20px; padding: 12px 20px; background-color: #d98ca7; color: white; font-size: 16px;
-                 border: none; border-radius: 5px; cursor: pointer; display: block; width: 100%; }
-        button:hover { background-color: #c07290; }
+        .container {
+            background-color: #ffeaf3;
+            max-width: 700px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #c94f7c;
+            text-align: center;
+        }
+        label, p {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .options {
+            margin-top: 5px;
+        }
+        .options label {
+            font-weight: normal;
+            display: block;
+        }
+        button {
+            margin-top: 25px;
+            padding: 12px;
+            width: 100%;
+            background-color: #d98ca7;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Ficha de Anamnese Capilar</h1>
-        <form id="formulario" onsubmit="handleSubmit(event)">
+        <form action="https://formsubmit.co/santocamilly3@gmail.com" method="POST">
             <label>Nome completo:</label>
-            <input type="text" required>
+            <input type="text" name="Nome" required>
 
             <label>Data de nascimento:</label>
-            <input type="date" required>
+            <input type="date" name="Data de nascimento" required>
 
             <label>Início do Protocolo Capilar:</label>
-            <input type="date" required>
+            <input type="text" name="Início do protocolo capilar">
 
             <label>Sexo:</label>
-            <div class="radio-group">
-                <label><input type="radio" name="sexo" required> Feminino</label>
-                <label><input type="radio" name="sexo"> Masculino</label>
+            <div class="options">
+                <label><input type="radio" name="Sexo" value="Feminino"> Feminino</label>
+                <label><input type="radio" name="Sexo" value="Masculino"> Masculino</label>
             </div>
 
             <label>1. Qual a sua queixa principal em relação ao couro cabeludo?</label>
-            <textarea required></textarea>
+            <textarea name="Queixa principal" rows="2"></textarea>
 
             <label>2. Dentro dessa queixa, ela afeta outras áreas do corpo?</label>
-            <div class="radio-group">
-                <label><input type="radio" name="afeta_outros" required> Não</label>
-                <label><input type="radio" name="afeta_outros"> Sim</label>
+            <div class="options">
+                <label><input type="radio" name="Afeta outras áreas" value="Não"> Não</label>
+                <label><input type="radio" name="Afeta outras áreas" value="Sim"> Sim</label>
             </div>
-            <label>Quais:</label>
-            <input type="text">
+            <input type="text" name="Quais áreas afetadas">
 
             <label>3. Faz quanto tempo que você começou com este problema?</label>
-            <input type="text" required>
+            <input type="text" name="Tempo com o problema">
 
             <label>4. Está associado a alguma doença sazonal ou congênita?</label>
-            <input type="text" required>
+            <input type="text" name="Doença sazonal ou congênita">
 
             <label>5. O problema está:</label>
-            <div class="radio-group">
-                <label><input type="radio" name="problema" required> Aumentando</label>
-                <label><input type="radio" name="problema"> Estável</label>
-                <label><input type="radio" name="problema"> Diminuindo</label>
+            <div class="options">
+                <label><input type="radio" name="Estado do problema" value="Aumentando"> Aumentando</label>
+                <label><input type="radio" name="Estado do problema" value="Estável"> Estável</label>
+                <label><input type="radio" name="Estado do problema" value="Diminuindo"> Diminuindo</label>
             </div>
 
             <label>6. Quais dessas alterações você apresenta no couro cabeludo?</label>
-            <div class="checkbox-group">
-                <label><input type="checkbox"> Dor</label>
-                <label><input type="checkbox"> Coceira</label>
-                <label><input type="checkbox"> Ardor</label>
-                <label><input type="checkbox"> Inflamação</label>
-                <label><input type="checkbox"> Feridas</label>
-                <label><input type="checkbox"> Sensibilidade</label>
-                <label><input type="checkbox"> Caspa</label>
-                <label><input type="checkbox"> Oleosidade</label>
-                <label><input type="checkbox"> Odor</label>
-                <label><input type="checkbox"> Descamação</label>
+            <div class="options">
+                <label><input type="checkbox" name="Alterações couro[]" value="Dor"> Dor</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Coceira"> Coceira</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Ardor"> Ardor</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Inflamação"> Inflamação</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Feridas"> Feridas</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Sensibilidade"> Sensibilidade</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Caspa"> Caspa</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Oleosidade"> Oleosidade</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Odor"> Odor</label>
+                <label><input type="checkbox" name="Alterações couro[]" value="Descamação"> Descamação</label>
+                <input type="text" name="Outros alterações couro" placeholder="Outros">
             </div>
-            <input type="text" placeholder="Outros">
 
-            <!-- Perguntas 7 a 20 omitidas por limitação de espaço, mas seriam inseridas aqui igualmente -->
+            <label>7. Em relação ao cabelo com o passar do tempo, ele ficou:</label>
+            <textarea name="Mudanças no cabelo" rows="2"></textarea>
 
-            <label style="margin-top:25px;"><input type="checkbox" required>
+            <label>8. Descreva últimas doenças relevantes que você foi acometido. (período de 6 meses)</label>
+            <textarea name="Doenças últimos 6 meses" rows="2"></textarea>
+
+            <label>9. Se tem queda de cabelo atual, nos meses que antecederam este evento, você:</label>
+            <textarea name="Eventos antes da queda" rows="2"></textarea>
+
+            <label>10. Tem alergia a algum medicamento ou cosmético?</label>
+            <div class="options">
+                <label><input type="radio" name="Alergia" value="Não"> Não</label>
+                <label><input type="radio" name="Alergia" value="Sim"> Sim</label>
+            </div>
+            <input type="text" name="Qual alergia">
+
+            <label>11. Tem filhos? Se sim, quando foi a última gestação:</label>
+            <input type="text" name="Filhos e última gestação">
+
+            <label>12. A gravidez ocasionou queda de cabelo após o período gestacional?</label>
+            <div class="options">
+                <label><input type="radio" name="Queda pós-gestação" value="Não"> Não</label>
+                <label><input type="radio" name="Queda pós-gestação" value="Sim"> Sim</label>
+            </div>
+
+            <label>13. Tem alguma alteração hormonal?</label>
+            <div class="options">
+                <label><input type="radio" name="Alteração hormonal" value="Não"> Não</label>
+                <label><input type="radio" name="Alteração hormonal" value="Sim"> Sim</label>
+            </div>
+            <input type="text" name="Qual alteração hormonal">
+
+            <label>14. Alguém da família tem algum tipo de calvície?</label>
+            <div class="options">
+                <label><input type="radio" name="Calvície na família" value="Não"> Não</label>
+                <label><input type="radio" name="Calvície na família" value="Sim"> Sim</label>
+            </div>
+            <input type="text" name="Parente com calvície">
+
+            <label>15. Qual a sua frequência de lavar os cabelos?</label>
+            <input type="text" name="Frequência de lavagem">
+
+            <label>16. Faz algum processo de cor nos cabelos?</label>
+            <div class="options">
+                <label><input type="radio" name="Coloração" value="Não"> Não</label>
+                <label><input type="radio" name="Coloração" value="Sim"> Sim</label>
+            </div>
+            <input type="text" name="Tipo coloração">
+            <input type="text" name="Frequência coloração">
+
+            <label>17. Faz uso de quais desses itens?</label>
+            <textarea name="Uso de itens"></textarea>
+
+            <label>18. Classifique seu nível de estresse:</label>
+            <div class="options">
+                <label><input type="radio" name="Estresse" value="Baixo"> Baixo</label>
+                <label><input type="radio" name="Estresse" value="Médio"> Médio</label>
+                <label><input type="radio" name="Estresse" value="Alto"> Alto</label>
+            </div>
+
+            <label>19. Você faz uso de algum tipo de alisante, progressiva, alinhamento ou disciplinantes?</label>
+            <div class="options">
+                <label><input type="radio" name="Alisamento" value="Sim"> Sim</label>
+                <label><input type="radio" name="Alisamento" value="Não"> Não</label>
+            </div>
+            <input type="text" name="Frequência alisamento">
+
+            <label>20. Usa marcapasso?</label>
+            <div class="options">
+                <label><input type="radio" name="Marcapasso" value="Sim"> Sim</label>
+                <label><input type="radio" name="Marcapasso" value="Não"> Não</label>
+            </div>
+
+            <label style="margin-top:20px;">
+                <input type="checkbox" name="Autorização" value="Sim" required>
                 Autorizo e estou de acordo, com os procedimentos realizados e/ou à serem pela profissional Bianca Marques de Abreu.
             </label>
 
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="http://wa.me/message/NJSWFOS4GCHXA1">
+
             <button type="submit">Enviar formulário</button>
         </form>
-
-        <div id="mensagemFinal" style="display:none; margin-top:30px; text-align:center;">
-            <p><strong>Obrigada por preencher o formulário, pode nos acionar no wpp para agendar seu horário!</strong></p>
-            <a href="http://wa.me/message/NJSWFOS4GCHXA1" target="_blank">
-                <button style="background-color:#25D366;">Ir para o WhatsApp</button>
-            </a>
-        </div>
+        <p style="text-align:center; margin-top:15px;">Obrigada por preencher o formulário, pode nos acionar no wpp para agendar seu horário!</p>
     </div>
-
-    <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            document.getElementById("formulario").style.display = "none";
-            document.getElementById("mensagemFinal").style.display = "block";
-        }
-    </script>
 </body>
 </html>
