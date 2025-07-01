@@ -6,127 +6,211 @@
     <title>Ficha de Anamnese Capilar</title>
     <style>
         body {
-            background-color: #fde4ec;
             font-family: Arial, sans-serif;
+            background-color: #fde4ec;
             padding: 20px;
         }
         .container {
             max-width: 800px;
-            margin: auto;
-            background-color: #ffeef5;
+            margin: 0 auto;
+            background-color: #ffe9f1;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         h1 {
             text-align: center;
-            color: #a2446d;
+            color: #b34475;
         }
         label {
             display: block;
             margin-top: 15px;
             font-weight: bold;
         }
-        input[type="text"], input[type="email"], input[type="date"], textarea, select {
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        textarea,
+        select {
             width: 100%;
             padding: 8px;
             margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        .checkbox-group, .radio-group {
-            margin-top: 10px;
+        textarea {
+            resize: vertical;
         }
-        .checkbox-group label, .radio-group label {
-            display: block;
-            font-weight: normal;
+        .checkbox-group, .radio-group {
+            margin-top: 5px;
+            margin-bottom: 10px;
         }
         button {
-            margin-top: 20px;
-            padding: 12px;
-            width: 100%;
             background-color: #d98ca7;
             color: white;
+            padding: 12px 20px;
             border: none;
             border-radius: 5px;
-            font-size: 1rem;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
         }
-        a.menu-button {
-            display: inline-block;
-            margin-bottom: 20px;
-            text-decoration: none;
-            color: #fff;
-            background-color: #a2446d;
-            padding: 10px 20px;
-            border-radius: 5px;
+        button:hover {
+            background-color: #c07290;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="index.html" class="menu-button">⬅ Voltar ao menu</a>
-        <h1>Ficha de Anamnese Capilar</h1>
-        <form action="https://formsubmit.co/santocamilly3@gmail.com" method="POST">
-            <label>Nome completo:</label>
-            <input type="text" name="Nome completo" required>
+<div class="container">
+    <h1>Ficha de Anamnese Capilar</h1>
+    <form action="https://formsubmit.co/santocamilly3@gmail.com" method="POST">
+        <label>Nome completo:</label>
+        <input type="text" name="Nome completo" required>
 
-            <label>Data de nascimento:</label>
-            <input type="date" name="Data de nascimento">
+        <label>Data de nascimento:</label>
+        <input type="date" name="Data de nascimento" required>
 
-            <label>Início do Protocolo Capilar:</label>
-            <input type="date" name="Início do Protocolo Capilar">
+        <label>Início do Protocolo Capilar:</label>
+        <input type="date" name="Início do Protocolo Capilar">
 
-            <label>Sexo:</label>
-            <div class="radio-group">
-                <label><input type="radio" name="Sexo" value="Feminino"> Feminino</label>
-                <label><input type="radio" name="Sexo" value="Masculino"> Masculino</label>
-            </div>
+        <label>Sexo:</label>
+        <div class="radio-group">
+            <input type="radio" name="Sexo" value="Feminino"> Feminino
+            <input type="radio" name="Sexo" value="Masculino"> Masculino
+        </div>
 
-            <label>1. Qual a sua queixa principal em relação ao couro cabeludo?</label>
-            <textarea name="Queixa principal"></textarea>
+        <label>1. Qual a sua queixa principal em relação ao couro cabeludo?</label>
+        <textarea name="Queixa principal" required></textarea>
 
-            <label>2. Essa queixa afeta outras áreas do corpo?</label>
-            <div class="radio-group">
-                <label><input type="radio" name="Afeta outras áreas" value="Sim"> Sim</label>
-                <label><input type="radio" name="Afeta outras áreas" value="Não"> Não</label>
-            </div>
-            <input type="text" name="Quais áreas" placeholder="Se sim, quais?">
+        <label>2. Dentro dessa queixa, ela afeta outras áreas do corpo?</label>
+        <div class="radio-group">
+            <input type="radio" name="Afeta outras áreas" value="Não"> Não
+            <input type="radio" name="Afeta outras áreas" value="Sim"> Sim
+        </div>
+        <input type="text" name="Quais áreas">
 
-            <label>3. Faz quanto tempo que você começou com este problema?</label>
-            <input type="text" name="Tempo de problema">
+        <label>3. Faz quanto tempo que você começou com este problema?</label>
+        <input type="text" name="Tempo com o problema">
 
-            <label>4. Está associado a alguma doença sazonal ou congênita?</label>
-            <input type="text" name="Associação com doença">
+        <label>4. Está associado a alguma doença sazonal ou congênita?</label>
+        <input type="text" name="Doença sazonal ou congênita">
 
-            <label>5. O problema está:</label>
-            <div class="radio-group">
-                <label><input type="radio" name="Problema está" value="Aumentando"> Aumentando</label>
-                <label><input type="radio" name="Problema está" value="Estável"> Estável</label>
-                <label><input type="radio" name="Problema está" value="Diminuindo"> Diminuindo</label>
-            </div>
+        <label>5. O problema está:</label>
+        <div class="radio-group">
+            <input type="radio" name="Evolução do problema" value="Aumentando"> Aumentando
+            <input type="radio" name="Evolução do problema" value="Estável"> Estável
+            <input type="radio" name="Evolução do problema" value="Diminuindo"> Diminuindo
+        </div>
 
-            <label>6. Quais dessas alterações você apresenta no couro cabeludo?</label>
-            <div class="checkbox-group">
-                <label><input type="checkbox" name="Alterações couro[]" value="Dor"> Dor</label>
-                <label><input type="checkbox" name="Alterações couro[]" value="Coceira"> Coceira</label>
-                <label><input type="checkbox" name="Alterações couro[]" value="Ardor"> Ardor</label>
-                <label><input type="checkbox" name="Alterações couro[]" value="Inflamação"> Inflamação</label>
-                <label><input type="checkbox" name="Alterações couro[]" value="Feridas"> Feridas</label>
-                <label><input type="checkbox" name="Alterações couro[]" value="Sensibilidade"> Sensibilidade</label>
-                <label><input type="checkbox" name="Alterações couro[]" value="Caspa"> Caspa</label>
-                <label><input type="checkbox" name="Alterações couro[]" value="Oleosidade"> Oleosidade</label>
-                <label><input type="checkbox" name="Alterações couro[]" value="Odor"> Odor</label>
-                <label><input type="checkbox" name="Alterações couro[]" value="Descamação"> Descamação</label>
-            </div>
-            <input type="text" name="Alterações couro - outros" placeholder="Outros">
+        <label>6. Quais dessas alterações você apresenta no couro cabeludo?</label>
+        <div class="checkbox-group">
+            <input type="checkbox" name="Alterações couro[]" value="Dor"> Dor
+            <input type="checkbox" name="Alterações couro[]" value="Coceira"> Coceira
+            <input type="checkbox" name="Alterações couro[]" value="Ardor"> Ardor
+            <input type="checkbox" name="Alterações couro[]" value="Inflamação"> Inflamação
+            <input type="checkbox" name="Alterações couro[]" value="Feridas"> Feridas
+            <input type="checkbox" name="Alterações couro[]" value="Sensibilidade"> Sensibilidade
+            <input type="checkbox" name="Alterações couro[]" value="Caspa"> Caspa
+            <input type="checkbox" name="Alterações couro[]" value="Oleosidade"> Oleosidade
+            <input type="checkbox" name="Alterações couro[]" value="Odor"> Odor
+            <input type="checkbox" name="Alterações couro[]" value="Descamação"> Descamação
+        </div>
+        <input type="text" name="Outras alterações couro" placeholder="Outros">
 
-            <!-- Continuação seria colocada aqui... -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="http://wa.me/message/NJSWFOS4GCHXA1">
+        
+<!-- 7 -->
+<label for="pergunta7"><strong>7. Em relação ao cabelo com o passar do tempo, ele ficou:</strong></label><br>
+<input type="checkbox" name="pergunta7[]" value="Mais fino"> Mais fino<br>
+<input type="checkbox" name="pergunta7[]" value="Mais crespo"> Mais crespo<br>
+<input type="checkbox" name="pergunta7[]" value="Mais quebradiço"> Mais quebradiço<br>
+<input type="checkbox" name="pergunta7[]" value="Muita queda"> Muita queda<br>
+<input type="checkbox" name="pergunta7[]" value="Mais seco"> Mais seco<br>
+<input type="checkbox" name="pergunta7[]" value="Não cresce"> Não cresce<br>
+<input type="text" name="pergunta7_outros" placeholder="Outros"><br><br>
 
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="http://wa.me/message/NJSWFOS4GCHXA1">
+<!-- 8 -->
+<label for="pergunta8"><strong>8. Descreva últimas doenças relevantes que você foi acometido. (período de 6 meses)</strong></label>
+<textarea name="pergunta8" rows="2" cols="50"></textarea><br><br>
 
-            <button type="submit">Enviar formulário</button>
-        </form>
-    </div>
+<!-- 9 -->
+<label for="pergunta9"><strong>9. Se tem queda de cabelo atual, nos meses que antecederam este evento, você:</strong></label><br>
+<input type="checkbox" name="pergunta9[]" value="Fez dietas"> Fez dietas<br>
+<input type="checkbox" name="pergunta9[]" value="Emagreceu"> Emagreceu<br>
+<input type="checkbox" name="pergunta9[]" value="Engordou"> Engordou<br>
+<input type="checkbox" name="pergunta9[]" value="Emocional"> Emocional<br>
+<input type="checkbox" name="pergunta9[]" value="Cirurgia"> Cirurgia<br>
+<input type="checkbox" name="pergunta9[]" value="Teve algum trauma"> Teve algum trauma<br>
+<input type="text" name="pergunta9_outros" placeholder="Outros"><br><br>
+
+<!-- 10 -->
+<label for="pergunta10"><strong>10. Tem alergia a algum medicamento ou cosmético?</strong></label><br>
+<input type="radio" name="pergunta10" value="Não"> Não
+<input type="radio" name="pergunta10" value="Sim"> Sim<br>
+<input type="text" name="pergunta10_qual" placeholder="Qual?"><br><br>
+
+<!-- 11 -->
+<label for="pergunta11"><strong>11. Tem filhos? Se sim, quando foi a última gestação:</strong></label><br>
+<input type="text" name="pergunta11"><br><br>
+
+<!-- 12 -->
+<label for="pergunta12"><strong>12. A gravidez ocasionou queda de cabelo, após o período gestacional?</strong></label><br>
+<input type="radio" name="pergunta12" value="Sim"> Sim
+<input type="radio" name="pergunta12" value="Não"> Não<br><br>
+
+<!-- 13 -->
+<label for="pergunta13"><strong>13. Tem alguma alteração hormonal?</strong></label><br>
+<input type="radio" name="pergunta13" value="Sim"> Sim
+<input type="radio" name="pergunta13" value="Não"> Não<br>
+<input type="text" name="pergunta13_qual" placeholder="Qual?"><br><br>
+
+<!-- 14 -->
+<label for="pergunta14"><strong>14. Alguém da família tem algum tipo de calvície?</strong></label><br>
+<input type="radio" name="pergunta14" value="Sim"> Sim
+<input type="radio" name="pergunta14" value="Não"> Não<br>
+<input type="text" name="pergunta14_quem" placeholder="Se sim, quem é o mais próximo?"><br><br>
+
+<!-- 15 -->
+<label for="pergunta15"><strong>15. Qual a sua frequência de lavar os cabelos?</strong></label><br>
+<input type="text" name="pergunta15"><br><br>
+
+<!-- 16 -->
+<label for="pergunta16"><strong>16. Faz algum processo de cor nos cabelos?</strong></label><br>
+<input type="radio" name="pergunta16" value="Sim"> Sim
+<input type="radio" name="pergunta16" value="Não"> Não<br>
+<input type="text" name="pergunta16_tipo" placeholder="Qual o tipo?"><br>
+<input type="text" name="pergunta16_freq" placeholder="Qual a frequência?"><br><br>
+
+<!-- 17 -->
+<label for="pergunta17"><strong>17. Faz uso de quais desses itens?</strong></label><br>
+<input type="checkbox" name="pergunta17[]" value="Gel"> Gel<br>
+<input type="checkbox" name="pergunta17[]" value="Boné/Chapéu"> Boné/Chapéu<br>
+<input type="checkbox" name="pergunta17[]" value="Penteados presos"> Penteados presos<br>
+<input type="checkbox" name="pergunta17[]" value="Escova"> Escova<br>
+<input type="checkbox" name="pergunta17[]" value="Baby liss"> Baby liss<br>
+<input type="checkbox" name="pergunta17[]" value="Secador"> Secador<br>
+<input type="checkbox" name="pergunta17[]" value="Apliques"> Apliques<br>
+<input type="checkbox" name="pergunta17[]" value="Prancha térmica"> Prancha térmica<br><br>
+
+<!-- 18 -->
+<label for="pergunta18"><strong>18. Classifique seu nível de estresse:</strong></label><br>
+<input type="radio" name="pergunta18" value="Baixo"> Baixo
+<input type="radio" name="pergunta18" value="Médio"> Médio
+<input type="radio" name="pergunta18" value="Alto"> Alto<br><br>
+
+<!-- 19 -->
+<label for="pergunta19"><strong>19. Você faz uso de algum tipo de alisante, progressiva, alinhamento ou disciplinantes?</strong></label><br>
+<input type="radio" name="pergunta19" value="Sim"> Sim
+<input type="radio" name="pergunta19" value="Não"> Não<br>
+<input type="text" name="pergunta19_frequencia" placeholder="Qual a frequência?"><br><br>
+
+<!-- 20 -->
+<label for="pergunta20"><strong>20. Usa marcapasso?</strong></label><br>
+<input type="radio" name="pergunta20" value="Sim"> Sim
+<input type="radio" name="pergunta20" value="Não"> Não<br><br>
+<button type="submit">Enviar formulário</button>
+    </form>
+</div>
 </body>
 </html>
