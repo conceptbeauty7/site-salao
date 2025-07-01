@@ -1,212 +1,213 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descubra o cuidado ideal</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fde4ec;
-            color: #5a2a41;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav {
-            background-color: #f8c6d8;
-            padding: 15px;
-            text-align: center;
-        }
-
-        nav a {
-            color: #5a2a41;
-            font-weight: bold;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            color: #a2446d;
-            font-family: 'Brush Script MT', cursive;
-        }
-
-        p.description {
-            font-size: 1rem;
-            color: #7a3b57;
-            margin-bottom: 2rem;
-        }
-
-        form {
-            text-align: left;
-        }
-
-        label {
-            display: block;
-            margin-top: 20px;
-            font-weight: bold;
-            color: #4b1d33;
-            font-family: 'Georgia', serif;
-            font-size: 1.05rem;
-        }
-
-        select {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
-        }
-
-        button {
-            display: block;
-            width: 100%;
-            padding: 14px;
-            background-color: #d98ca7;
-            color: white;
-            font-size: 1.05rem;
-            font-weight: bold;
-            border: none;
-            border-radius: 6px;
-            margin-top: 25px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #c07290;
-        }
-
-        #resultado {
-            margin-top: 30px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #5a2a41;
-        }
-
-        #mensagemErro {
-            margin-top: 20px;
-            color: #a1002d;
-            font-style: italic;
-            font-weight: 500;
-            border: 2px solid #a1002d;
-            padding: 5px;
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 6px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Descubra o cuidado ideal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fde1eb;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff0f6;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    h1 {
+      text-align: center;
+      color: #b4476b;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #d97894;
+      color: white;
+      padding: 12px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 6px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #5a2a41;
+      text-align: center;
+    }
+    #mensagemErro {
+      color: #a1002d;
+      font-style: italic;
+      text-align: center;
+      margin-top: 10px;
+    }
+    #whatsapp-fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Descubra seu Estilo</a>
-        <a href="anamnese.html">Ficha de Anamnese</a>
-    </nav>
+  <div class="container">
+    <h1>Descubra o cuidado ideal para seu cabelo</h1>
+    <form id="quizForm">
+      <label for="tipoCabelo">Como você descreveria seu tipo de cabelo?</label>
+      <select id="tipoCabelo" required>
+        <option value="">Selecione</option>
+        <option value="Liso">Liso</option>
+        <option value="Ondulado">Ondulado</option>
+        <option value="Cacheado ou volumoso">Cacheado ou volumoso</option>
+        <option value="Crespo">Crespo</option>
+      </select>
 
-    <div class="container">
-        <h1>Descubra o cuidado ideal para seu cabelo</h1>
-        <p class="description">Responda às perguntas abaixo e descubra!</p>
-        <form id="quizForm">
-            <label for="tipo">Como você descreveria seu tipo de cabelo?</label>
-            <select id="tipo" name="tipo">
-                <option value="">Selecione</option>
-                <option value="liso">Liso</option>
-                <option value="ondulado">Ondulado</option>
-                <option value="cacheado">Cacheado ou volumoso</option>
-                <option value="crespo">Crespo</option>
-            </select>
+      <label for="ressecado">Seu cabelo está ressecado?</label>
+      <select id="ressecado" required>
+        <option value="">Selecione</option>
+        <option value="Muito">Muito</option>
+        <option value="Pouco">Pouco</option>
+        <option value="Não">Não</option>
+      </select>
 
-            <label for="ressecado">Seu cabelo está ressecado?</label>
-            <select id="ressecado" name="ressecado">
-                <option value="">Selecione</option>
-                <option value="nao">Não</option>
-                <option value="pouco">Pouco</option>
-                <option value="muito">Muito</option>
-            </select>
+      <label for="quimica">Com que frequência você usa química?</label>
+      <select id="quimica" required>
+        <option value="">Selecione</option>
+        <option value="Sempre">Sempre</option>
+        <option value="Às vezes">Às vezes</option>
+        <option value="Nunca">Nunca</option>
+      </select>
 
-            <label for="quimica">Com que frequência você usa química?</label>
-            <select id="quimica" name="quimica">
-                <option value="">Selecione</option>
-                <option value="nunca">Nunca</option>
-                <option value="asvezes">Às vezes</option>
-                <option value="frequente">Frequentemente</option>
-            </select>
+      <label for="quebra">Você percebe queda ou quebra?</label>
+      <select id="quebra" required>
+        <option value="">Selecione</option>
+        <option value="Muita quebra">Muita quebra</option>
+        <option value="Queda leve">Queda leve</option>
+        <option value="Não">Não</option>
+      </select>
 
-            <label for="queda">Você percebe queda ou quebra?</label>
-            <select id="queda" name="queda">
-                <option value="">Selecione</option>
-                <option value="nao">Não</option>
-                <option value="leve">Queda leve</option>
-                <option value="muita">Muita quebra</option>
-            </select>
+      <label for="estilo">Qual seu estilo preferido?</label>
+      <select id="estilo" required>
+        <option value="">Selecione</option>
+        <option value="Clássico">Clássico</option>
+        <option value="Moderno">Moderno</option>
+        <option value="Romântico">Romântico</option>
+        <option value="Ousado">Ousado</option>
+      </select>
 
-            <button type="submit">Ver Resultado</button>
-        </form>
-        <div id="resultado"></div>
-        <div id="mensagemErro"></div>
-    </div>
+      <label for="objetivo">O que você busca com um novo corte/procedimento?</label>
+      <select id="objetivo" required>
+        <option value="">Selecione</option>
+        <option value="Praticidade">Praticidade</option>
+        <option value="Volume">Volume</option>
+        <option value="Destacar textura">Destacar textura</option>
+        <option value="Renovar visual">Renovar visual</option>
+      </select>
 
-    <script>
-        document.getElementById("quizForm").addEventListener("submit", function(event) {
-            event.preventDefault();
+      <label for="hidratacao">Com que frequência você hidrata o cabelo em casa?</label>
+      <select id="hidratacao" required>
+        <option value="">Selecione</option>
+        <option value="1x por semana ou mais">1x por semana ou mais</option>
+        <option value="A cada 15 dias">A cada 15 dias</option>
+        <option value="Raramente">Raramente</option>
+        <option value="Nunca">Nunca</option>
+      </select>
 
-            const tipo = document.getElementById("tipo").value;
-            const ressecado = document.getElementById("ressecado").value;
-            const quimica = document.getElementById("quimica").value;
-            const queda = document.getElementById("queda").value;
-            const resultadoDiv = document.getElementById("resultado");
-            const mensagemErro = document.getElementById("mensagemErro");
+      <label for="cronograma">Você faz algum tipo de cronograma capilar?</label>
+      <select id="cronograma" required>
+        <option value="">Selecione</option>
+        <option value="Sim">Sim</option>
+        <option value="Já ouvi falar">Já ouvi falar, mas não sigo</option>
+        <option value="Não">Não</option>
+      </select>
 
-            mensagemErro.textContent = "";
+      <button type="submit">Ver Resultado</button>
+    </form>
 
-            if (!tipo || !ressecado || !quimica || !queda) {
-                mensagemErro.textContent = "Por favor, responda todas as perguntas.";
-                resultadoDiv.textContent = "";
-                return;
-            }
+    <div id="mensagemErro"></div>
+    <div id="resultado"></div>
+  </div>
 
-            let tratamento = 0;
-            let nutricao = 0;
-            let corteEspecial = 0;
+  <a id="whatsapp-fixed" href="https://wa.me/message/NJSWFOS4GCHXA1" target="_blank">Falar com o salão</a>
 
-            if (ressecado === "muito") tratamento++;
-            if (ressecado === "pouco") nutricao++;
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const tipo = document.getElementById("tipoCabelo").value;
+      const ressecado = document.getElementById("ressecado").value;
+      const quimica = document.getElementById("quimica").value;
+      const quebra = document.getElementById("quebra").value;
+      const estilo = document.getElementById("estilo").value;
+      const objetivo = document.getElementById("objetivo").value;
+      const hidratacao = document.getElementById("hidratacao").value;
+      const cronograma = document.getElementById("cronograma").value;
 
-            if (quimica === "frequente") tratamento++;
-            if (quimica === "asvezes") nutricao++;
+      const erro = document.getElementById("mensagemErro");
+      const resultadoDiv = document.getElementById("resultado");
 
-            if (queda === "muita") tratamento++;
-            if (queda === "leve") nutricao++;
+      erro.textContent = "";
+      resultadoDiv.textContent = "";
 
-            if (tipo === "cacheado") corteEspecial++;
+      if (!tipo || !ressecado || !quimica || !quebra || !estilo || !objetivo || !hidratacao || !cronograma) {
+        erro.textContent = "Por favor, responda todas as perguntas.";
+        return;
+      }
 
-            let resultado = "";
+      let tratamento = 0;
+      let nutricao = 0;
+      let corteEspecial = 0;
 
-            if (tratamento >= 2) {
-                resultado = "Seu cabelo demonstra sinais de danos. Recomendamos um cronograma capilar com foco em reconstrução e hidratações profundas.";
-            } else if (nutricao >= 2) {
-                resultado = "Seu cabelo está saudável mas com leve ressecamento. Aposte em nutrições semanais com óleos vegetais e corte bordado.";
-            } else {
-                resultado = "Seu cabelo está em boa condição geral. Um corte de manutenção e hidratação leve são ideais neste momento.";
-            }
+      if (ressecado === "Muito") tratamento++;
+      if (ressecado === "Pouco") nutricao++;
+      if (quimica === "Sempre") tratamento++;
+      if (quimica === "Às vezes") nutricao++;
+      if (quebra === "Muita quebra") tratamento++;
+      if (quebra === "Queda leve") nutricao++;
+      if (tipo === "Cacheado ou volumoso") corteEspecial++;
 
-            if (corteEspecial) {
-                resultado += " Como seu cabelo é cacheado ou volumoso, recomendamos cortes em camadas ou técnicas como o corte em U para valorizar os cachos.";
-            }
+      let resultado = "";
 
-            resultadoDiv.textContent = resultado;
-        });
-    </script>
+      if (tratamento >= 2) {
+        resultado = "Seu cabelo demonstra sinais de danos. Recomendamos um cronograma capilar com foco em reconstrução e hidratações profundas.";
+      } else if (nutricao >= 2) {
+        resultado = "Seu cabelo está saudável mas com leve ressecamento. Aposte em nutrições semanais com óleos vegetais e corte bordado.";
+      } else {
+        resultado = "Seu cabelo está em boa condição geral. Um corte de manutenção e hidratação leve são ideais neste momento.";
+      }
+
+      if (corteEspecial) {
+        resultado += " Como seu cabelo é cacheado ou volumoso, recomendamos cortes em camadas ou técnicas como o corte em U para valorizar os cachos.";
+      }
+
+      if (cronograma !== "Sim") {
+        resultado += "<br><br><strong>Recomendamos que você preencha a ficha de anamnese capilar para um diagnóstico mais personalizado.</strong><br><a href='anamnese.html' style='color:#b4476b;'>Clique aqui para preencher a ficha</a>";
+      }
+
+      resultadoDiv.innerHTML = resultado;
+    });
+  </script>
 </body>
 </html>
