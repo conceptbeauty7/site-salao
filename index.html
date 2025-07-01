@@ -3,145 +3,115 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BHB Concept Beauty</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
-            background-color: #FFE6F0;
             font-family: Arial, sans-serif;
+            background-color: #FFE6F0;
             margin: 0;
             padding: 0;
         }
-        header {
-            background-color: #D98CA3;
-            text-align: center;
+        .navbar {
+            background-color: #E7A1B0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
             padding: 10px;
+            flex-wrap: wrap;
         }
-        header img {
-            height: 60px;
+        .navbar img {
+            height: 50px;
         }
-        nav {
-            background-color: #F5B7C4;
-            text-align: center;
-            padding: 10px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            color: #4B0C1F;
+        .navbar a {
             text-decoration: none;
+            color: #6D2E46;
             font-weight: bold;
+            margin: 0 10px;
         }
         .container {
-            max-width: 600px;
-            margin: auto;
-            background-color: #FFE6F0;
+            max-width: 700px;
+            margin: 0 auto;
             padding: 20px;
+            background-color: #FFEAF4;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
         }
         h1 {
-            color: #B24574;
+            color: #B1456B;
             text-align: center;
         }
         label {
             display: block;
-            margin: 15px 0 5px;
-            font-weight: bold;
-            color: #4B0C1F;
+            margin: 10px 0 5px;
         }
         select, input[type="text"] {
             width: 100%;
             padding: 8px;
-            border-radius: 5px;
+            margin-bottom: 15px;
             border: 1px solid #ccc;
+            border-radius: 5px;
         }
-        button {
-            width: 100%;
-            background-color: #DE8294;
+        .button {
+            background-color: #D77A9C;
             color: white;
-            padding: 12px;
-            font-size: 16px;
             border: none;
-            border-radius: 8px;
-            margin-top: 20px;
+            padding: 10px 20px;
             cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 5px;
         }
-        .whatsapp-float {
+        .whatsapp-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #25d366;
+            background-color: #25D366;
             color: white;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            font-size: 30px;
-            text-align: center;
-            line-height: 60px;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 14px;
             text-decoration: none;
-            box-shadow: 2px 2px 5px gray;
-            z-index: 1000;
         }
     </style>
 </head>
 <body>
-
-<header>
-    <img src="logo_salao.png" alt="Logo do Salão">
-</header>
-
-<nav>
-    <a href="index.html">Descubra seu Estilo</a>
-    <a href="anamnese.html">Ficha de Anamnese</a>
-</nav>
-
-<div class="container">
-    <h1>Descubra o cuidado ideal para seu cabelo</h1>
-    <p style="text-align: center;">Responda às perguntas abaixo e descubra!</p>
-
-    <form id="quizForm">
-        <label>Como você descreveria seu tipo de cabelo?</label>
-        <select><option>Selecione</option></select>
-
-        <label>Seu cabelo está ressecado?</label>
-        <select><option>Selecione</option></select>
-
-        <label>Com que frequência você usa química?</label>
-        <select><option>Selecione</option></select>
-
-        <label>Você percebe queda ou quebra?</label>
-        <select><option>Selecione</option></select>
-
-        <label>Qual seu estilo preferido?</label>
-        <select><option>Selecione</option></select>
-
-        <label>O que você busca com um novo corte/procedimento?</label>
-        <select><option>Selecione</option></select>
-
-        <label>Com que frequência você hidrata o cabelo em casa?</label>
-        <select><option>Selecione</option></select>
-
-        <label>Você faz algum tipo de cronograma capilar?</label>
-        <select><option>Selecione</option></select>
-
-        <button type="button" onclick="mostrarResultado()">Ver Resultado</button>
-    </form>
-
-    <div id="resultado" style="display:none; margin-top: 20px; text-align: center;">
-        <h2>Indicação: Cronograma Capilar</h2>
-        <p>Recomendamos que você agende um horário para uma avaliação mais completa.</p>
-        <a href="anamnese.html">
-            <button>Ir para Ficha de Anamnese</button>
-        </a>
+    <div class="navbar">
+        <img src="logo_salao_redimensionada.png" alt="Logo do Salão">
+        <a href="index.html">Descubra seu Estilo</a>
+        <a href="anamnese.html">Ficha de Anamnese</a>
     </div>
-</div>
+    <div class="container">
+        <h1>Descubra o cuidado ideal para seu cabelo</h1>
+        <form>
+            <label>Como você descreveria seu tipo de cabelo?</label>
+            <select><option>Selecione</option></select>
 
-<a class="whatsapp-float" href="http://wa.me/message/NJSWFOS4GCHXA1" target="_blank">💬</a>
+            <label>Seu cabelo está ressecado?</label>
+            <select><option>Selecione</option></select>
 
-<script>
-    function mostrarResultado() {
-        document.getElementById("resultado").style.display = "block";
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-</script>
+            <label>Com que frequência você usa química?</label>
+            <select><option>Selecione</option></select>
 
+            <label>Você percebe queda ou quebra?</label>
+            <select><option>Selecione</option></select>
+
+            <label>Qual seu estilo preferido?</label>
+            <select><option>Selecione</option></select>
+
+            <label>O que você busca com um novo corte/procedimento?</label>
+            <select><option>Selecione</option></select>
+
+            <label>Com que frequência você hidrata o cabelo em casa?</label>
+            <select><option>Selecione</option></select>
+
+            <label>Você faz algum tipo de cronograma capilar?</label>
+            <select><option>Selecione</option></select>
+
+            <button class="button" type="submit">Ver Resultado</button>
+        </form>
+    </div>
+    <a class="whatsapp-button" href="http://wa.me/message/NJSWFOS4GCHXA1" target="_blank">Fale conosco</a>
 </body>
 </html>
